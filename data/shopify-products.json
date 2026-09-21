@@ -1,0 +1,2517 @@
+[
+  {
+    "handle": "lawenda-bio",
+    "title": "Lawenda wąskolistna BIO",
+    "descriptionHtml": "<p>Lawenda wąskolistna BIO (Lavandula angustifolia), olejek eteryczny z certyfikatem BIO z analizą GC/MS partii LAV-04.26. wieczorne wyciszenie i sen, napięcie i stres, delikatna skóra, drobne podrażnienia.</p>",
+    "productType": "Olejek eteryczny",
+    "vendor": "Aromatarius",
+    "status": "ACTIVE",
+    "tags": [
+      "bio",
+      "bestseller",
+      "potrzeba:sen",
+      "potrzeba:stres",
+      "potrzeba:skora",
+      "potrzeba:dzieci",
+      "zapach:kwiatowy",
+      "uzycie:dyfuzja",
+      "uzycie:skora",
+      "uzycie:kapiel",
+      "bezpieczny:dzieci3",
+      "bezpieczny:ciaza"
+    ],
+    "productOptions": [
+      {
+        "name": "Pojemność",
+        "position": 1,
+        "values": [
+          {
+            "name": "5 ml"
+          },
+          {
+            "name": "10 ml"
+          },
+          {
+            "name": "30 ml"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "5 ml"
+          }
+        ],
+        "sku": "LAWENDABIO-5",
+        "price": "34.00",
+        "compareAtPrice": null,
+        "position": 1,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 30
+            }
+          }
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "10 ml"
+          }
+        ],
+        "sku": "LAWENDABIO-10",
+        "price": "54.00",
+        "compareAtPrice": null,
+        "position": 2,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 45
+            }
+          }
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "30 ml"
+          }
+        ],
+        "sku": "LAWENDABIO-30",
+        "price": "129.00",
+        "compareAtPrice": null,
+        "position": 3,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 80
+            }
+          }
+        }
+      }
+    ],
+    "seo": {
+      "title": null,
+      "description": null
+    },
+    "metafields": [
+      {
+        "namespace": "aromatarius",
+        "key": "nazwa_lacinska",
+        "type": "single_line_text_field",
+        "value": "Lavandula angustifolia"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "rodzina_botaniczna",
+        "type": "single_line_text_field",
+        "value": "Lamiaceae (jasnotowate)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "czesc_rosliny",
+        "type": "single_line_text_field",
+        "value": "kwitnące wierzchołki"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "metoda_ekstrakcji",
+        "type": "single_line_text_field",
+        "value": "destylacja parą wodną"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "chemotyp",
+        "type": "single_line_text_field",
+        "value": "linalol / octan linalylu"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "pochodzenie",
+        "type": "single_line_text_field",
+        "value": "Francja (Prowansja)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "certyfikat_bio",
+        "type": "single_line_text_field",
+        "value": "PL-EKO-07 (rolnictwo UE / spoza UE)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "numer_partii",
+        "type": "single_line_text_field",
+        "value": "LAV-04.26"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "glowne_skladniki",
+        "type": "json",
+        "value": "[{\"nazwa\":\"linalol\",\"procent\":36.4},{\"nazwa\":\"octan linalylu\",\"procent\":33.1},{\"nazwa\":\"beta-kariofilen\",\"procent\":4.2}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "na_co",
+        "type": "list.single_line_text_field",
+        "value": "[\"wieczorne wyciszenie i sen\",\"napięcie i stres\",\"delikatna skóra, drobne podrażnienia\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "zapach_opis",
+        "type": "single_line_text_field",
+        "value": "kwiatowo-ziołowy, miękki, lekko słodki"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "wlasciwosci",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Lawenda wąskolistna to najbardziej uniwersalny olejek w aromaterapii. W literaturze opisywana jako wyciszająca, tradycyjnie stosowana wieczorem w dyfuzji i w pielęgnacji skóry. Wysoka zawartość linalolu i octanu linalylu odpowiada za jej łagodny, kwiatowy profil.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "jak_stosowac",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Dyfuzja wieczorem 20 do 30 minut, kąpiel z emulgatorem, masaż w oleju bazowym. Sprawdza się w mieszankach z bergamotką, cedrem i geranium.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "dawkowanie",
+        "type": "json",
+        "value": "[{\"metoda\":\"Dyfuzja\",\"dawka\":\"3 do 5 kropli / 100 ml wody\"},{\"metoda\":\"Skóra (masaż)\",\"dawka\":\"1 do 2 % w oleju bazowym (2 do 4 kropli / 10 ml)\"},{\"metoda\":\"Kąpiel\",\"dawka\":\"4 do 6 kropli wymieszane z łyżką soli lub oleju\"},{\"metoda\":\"Inhalacja\",\"dawka\":\"1 do 2 krople na chusteczkę\"}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "bezpieczenstwo",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"list\",\"listType\":\"unordered\",\"children\":[{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Nie stosować doustnie bez konsultacji.\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"U dzieci od 3. roku życia w niskim stężeniu (0,5 %).\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"W ciąży po 1. trymestrze, wyłącznie zewnętrznie.\"}]}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "wplyw_emocjonalny",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Tradycyjnie kojarzona z uspokojeniem, wyciszeniem natłoku myśli i ułatwieniem zasypiania.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "receptury_slugs",
+        "type": "list.single_line_text_field",
+        "value": "[\"na-sen\",\"na-stres\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "kompendium_slug",
+        "type": "single_line_text_field",
+        "value": "lawenda"
+      }
+    ]
+  },
+  {
+    "handle": "bergamotka-bio",
+    "title": "Bergamotka BIO",
+    "descriptionHtml": "<p>Bergamotka BIO (Citrus bergamia), olejek eteryczny z certyfikatem BIO z analizą GC/MS partii BERG-07.27. obniżony nastrój, napięcie, wieczorna dyfuzja, zapach domu.</p>",
+    "productType": "Olejek eteryczny",
+    "vendor": "Aromatarius",
+    "status": "ACTIVE",
+    "tags": [
+      "bio",
+      "bestseller",
+      "potrzeba:stres",
+      "potrzeba:sen",
+      "potrzeba:dom",
+      "zapach:cytrusowy",
+      "uzycie:dyfuzja",
+      "uzycie:skora",
+      "fototoksyczny"
+    ],
+    "productOptions": [
+      {
+        "name": "Pojemność",
+        "position": 1,
+        "values": [
+          {
+            "name": "5 ml"
+          },
+          {
+            "name": "10 ml"
+          },
+          {
+            "name": "30 ml"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "5 ml"
+          }
+        ],
+        "sku": "BERGAMOTKABIO-5",
+        "price": "39.00",
+        "compareAtPrice": null,
+        "position": 1,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 30
+            }
+          }
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "10 ml"
+          }
+        ],
+        "sku": "BERGAMOTKABIO-10",
+        "price": "64.00",
+        "compareAtPrice": null,
+        "position": 2,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 45
+            }
+          }
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "30 ml"
+          }
+        ],
+        "sku": "BERGAMOTKABIO-30",
+        "price": "149.00",
+        "compareAtPrice": null,
+        "position": 3,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 80
+            }
+          }
+        }
+      }
+    ],
+    "seo": {
+      "title": null,
+      "description": null
+    },
+    "metafields": [
+      {
+        "namespace": "aromatarius",
+        "key": "nazwa_lacinska",
+        "type": "single_line_text_field",
+        "value": "Citrus bergamia"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "rodzina_botaniczna",
+        "type": "single_line_text_field",
+        "value": "Rutaceae (rutowate)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "czesc_rosliny",
+        "type": "single_line_text_field",
+        "value": "skórka owocu"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "metoda_ekstrakcji",
+        "type": "single_line_text_field",
+        "value": "tłoczenie na zimno"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "pochodzenie",
+        "type": "single_line_text_field",
+        "value": "Włochy (Kalabria)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "certyfikat_bio",
+        "type": "single_line_text_field",
+        "value": "PL-EKO-07 (rolnictwo UE / spoza UE)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "numer_partii",
+        "type": "single_line_text_field",
+        "value": "BERG-07.27"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "glowne_skladniki",
+        "type": "json",
+        "value": "[{\"nazwa\":\"limonen\",\"procent\":38.2},{\"nazwa\":\"octan linalylu\",\"procent\":27.5},{\"nazwa\":\"linalol\",\"procent\":9.8}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "na_co",
+        "type": "list.single_line_text_field",
+        "value": "[\"obniżony nastrój, napięcie\",\"wieczorna dyfuzja\",\"zapach domu\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "zapach_opis",
+        "type": "single_line_text_field",
+        "value": "cytrusowy z kwiatową nutą, świeży, elegancki"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "wlasciwosci",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Bergamotka łączy świeżość cytrusów z kwiatową miękkością octanu linalylu. W literaturze aromaterapeutycznej opisywana jako olejek „rozjaśniający” nastrój, chętnie stosowany w dyfuzji w ciągu dnia i wieczorem.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "jak_stosowac",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Dyfuzja solo lub z lawendą i geranium. Na skórę tylko w niskim stężeniu i nigdy przed ekspozycją na słońce.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "dawkowanie",
+        "type": "json",
+        "value": "[{\"metoda\":\"Dyfuzja\",\"dawka\":\"4 do 6 kropli / 100 ml wody\"},{\"metoda\":\"Skóra\",\"dawka\":\"maks. 0,4 % (fototoksyczność), nie przed słońcem\"},{\"metoda\":\"Inhalacja\",\"dawka\":\"1 do 2 krople na chusteczkę\"}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "bezpieczenstwo",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"list\",\"listType\":\"unordered\",\"children\":[{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Fototoksyczny\",\"bold\":true},{\"type\":\"text\",\"value\":\": po aplikacji na skórę unikaj słońca i solarium przez 12 godzin.\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Nie stosować doustnie.\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Trzymać z dala od dzieci.\"}]}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "wplyw_emocjonalny",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Tradycyjnie stosowana przy przygnębieniu i „ciężkim” nastroju, dodaje lekkości bez pobudzania.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "receptury_slugs",
+        "type": "list.single_line_text_field",
+        "value": "[\"na-stres\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "kompendium_slug",
+        "type": "single_line_text_field",
+        "value": "bergamotka"
+      }
+    ]
+  },
+  {
+    "handle": "mieta-pieprzowa-bio",
+    "title": "Mięta pieprzowa BIO",
+    "descriptionHtml": "<p>Mięta pieprzowa BIO (Mentha x piperita), olejek eteryczny z certyfikatem BIO z analizą GC/MS partii MEN-02.26. napięciowe bóle głowy (skronie, w oleju), ciężkość po posiłku, koncentracja.</p>",
+    "productType": "Olejek eteryczny",
+    "vendor": "Aromatarius",
+    "status": "ACTIVE",
+    "tags": [
+      "bio",
+      "bestseller",
+      "potrzeba:bol",
+      "potrzeba:trawienie",
+      "potrzeba:oddychanie",
+      "zapach:ziolowy",
+      "uzycie:dyfuzja",
+      "uzycie:skora",
+      "uzycie:inhalacja"
+    ],
+    "productOptions": [
+      {
+        "name": "Pojemność",
+        "position": 1,
+        "values": [
+          {
+            "name": "10 ml"
+          },
+          {
+            "name": "30 ml"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "10 ml"
+          }
+        ],
+        "sku": "MIETAPIEPRZOWABIO-10",
+        "price": "44.00",
+        "compareAtPrice": null,
+        "position": 1,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 45
+            }
+          }
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "30 ml"
+          }
+        ],
+        "sku": "MIETAPIEPRZOWABIO-30",
+        "price": "109.00",
+        "compareAtPrice": null,
+        "position": 2,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 80
+            }
+          }
+        }
+      }
+    ],
+    "seo": {
+      "title": null,
+      "description": null
+    },
+    "metafields": [
+      {
+        "namespace": "aromatarius",
+        "key": "nazwa_lacinska",
+        "type": "single_line_text_field",
+        "value": "Mentha x piperita"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "rodzina_botaniczna",
+        "type": "single_line_text_field",
+        "value": "Lamiaceae (jasnotowate)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "czesc_rosliny",
+        "type": "single_line_text_field",
+        "value": "ziele"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "metoda_ekstrakcji",
+        "type": "single_line_text_field",
+        "value": "destylacja parą wodną"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "chemotyp",
+        "type": "single_line_text_field",
+        "value": "mentol / menton"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "pochodzenie",
+        "type": "single_line_text_field",
+        "value": "Indie"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "certyfikat_bio",
+        "type": "single_line_text_field",
+        "value": "PL-EKO-07 (rolnictwo UE / spoza UE)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "numer_partii",
+        "type": "single_line_text_field",
+        "value": "MEN-02.26"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "glowne_skladniki",
+        "type": "json",
+        "value": "[{\"nazwa\":\"mentol\",\"procent\":42.1},{\"nazwa\":\"menton\",\"procent\":21.7},{\"nazwa\":\"1,8-cyneol\",\"procent\":5.9}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "na_co",
+        "type": "list.single_line_text_field",
+        "value": "[\"napięciowe bóle głowy (skronie, w oleju)\",\"ciężkość po posiłku\",\"koncentracja\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "zapach_opis",
+        "type": "single_line_text_field",
+        "value": "mentolowy, chłodny, bardzo intensywny"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "wlasciwosci",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Mięta pieprzowa daje natychmiastowy efekt chłodzenia dzięki mentolowi. Tradycyjnie stosowana miejscowo (skronie, kark) w oleju bazowym oraz w inhalacji przy uczuciu zatkanego nosa.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "jak_stosowac",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"1 kropla w 10 ml oleju na skronie i kark. W dyfuzji krótko (10 do 15 minut). Nie łączyć z homeopatią bez konsultacji.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "dawkowanie",
+        "type": "json",
+        "value": "[{\"metoda\":\"Dyfuzja\",\"dawka\":\"2 do 3 krople / 100 ml wody, 10 do 15 minut\"},{\"metoda\":\"Skóra\",\"dawka\":\"1 % w oleju bazowym (2 krople / 10 ml), punktowo\"},{\"metoda\":\"Inhalacja\",\"dawka\":\"1 kropla na chusteczkę\"}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "bezpieczenstwo",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"list\",\"listType\":\"unordered\",\"children\":[{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Nie stosować u dzieci poniżej 6 lat (ryzyko skurczu krtani).\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Nie stosować w ciąży i podczas karmienia.\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Nie aplikować w okolicy oczu i nosa u dzieci.\"}]}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "receptury_slugs",
+        "type": "list.single_line_text_field",
+        "value": "[\"na-bol-glowy\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "kompendium_slug",
+        "type": "single_line_text_field",
+        "value": "mieta-pieprzowa"
+      }
+    ]
+  },
+  {
+    "handle": "drzewo-herbaciane-bio",
+    "title": "Drzewo herbaciane BIO",
+    "descriptionHtml": "<p>Drzewo herbaciane BIO (Melaleuca alternifolia), olejek eteryczny z certyfikatem BIO z analizą GC/MS partii TTO-05.26. niedoskonałości skóry, punktowo, domowe środki czystości, sezon jesienny w dyfuzji.</p>",
+    "productType": "Olejek eteryczny",
+    "vendor": "Aromatarius",
+    "status": "ACTIVE",
+    "tags": [
+      "bio",
+      "bestseller",
+      "potrzeba:skora",
+      "potrzeba:odpornosc",
+      "potrzeba:dom",
+      "zapach:ziolowy",
+      "uzycie:skora",
+      "uzycie:dyfuzja",
+      "bezpieczny:dzieci6"
+    ],
+    "productOptions": [
+      {
+        "name": "Pojemność",
+        "position": 1,
+        "values": [
+          {
+            "name": "10 ml"
+          },
+          {
+            "name": "30 ml"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "10 ml"
+          }
+        ],
+        "sku": "DRZEWOHERBACIANEBIO-10",
+        "price": "39.00",
+        "compareAtPrice": null,
+        "position": 1,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 45
+            }
+          }
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "30 ml"
+          }
+        ],
+        "sku": "DRZEWOHERBACIANEBIO-30",
+        "price": "95.00",
+        "compareAtPrice": null,
+        "position": 2,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 80
+            }
+          }
+        }
+      }
+    ],
+    "seo": {
+      "title": null,
+      "description": null
+    },
+    "metafields": [
+      {
+        "namespace": "aromatarius",
+        "key": "nazwa_lacinska",
+        "type": "single_line_text_field",
+        "value": "Melaleuca alternifolia"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "rodzina_botaniczna",
+        "type": "single_line_text_field",
+        "value": "Myrtaceae (mirtowate)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "czesc_rosliny",
+        "type": "single_line_text_field",
+        "value": "liście"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "metoda_ekstrakcji",
+        "type": "single_line_text_field",
+        "value": "destylacja parą wodną"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "chemotyp",
+        "type": "single_line_text_field",
+        "value": "terpinen-4-ol"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "pochodzenie",
+        "type": "single_line_text_field",
+        "value": "Australia"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "certyfikat_bio",
+        "type": "single_line_text_field",
+        "value": "PL-EKO-07 (rolnictwo UE / spoza UE)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "numer_partii",
+        "type": "single_line_text_field",
+        "value": "TTO-05.26"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "glowne_skladniki",
+        "type": "json",
+        "value": "[{\"nazwa\":\"terpinen-4-ol\",\"procent\":40.3},{\"nazwa\":\"gamma-terpinen\",\"procent\":19.8},{\"nazwa\":\"alfa-terpinen\",\"procent\":9.6}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "na_co",
+        "type": "list.single_line_text_field",
+        "value": "[\"niedoskonałości skóry, punktowo\",\"domowe środki czystości\",\"sezon jesienny w dyfuzji\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "zapach_opis",
+        "type": "single_line_text_field",
+        "value": "ostry, żywiczno-ziołowy, „medyczny”"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "wlasciwosci",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Olejek z drzewa herbacianego jest jednym z najlepiej przebadanych olejków. W literaturze opisywany jako oczyszczający, stosowany punktowo na skórę i w domowych mieszankach do sprzątania.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "jak_stosowac",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Punktowo 1 kropla w kropli oleju jojoba. W spray’u do sprzątania 20 kropli na 500 ml wody z octem.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "dawkowanie",
+        "type": "json",
+        "value": "[{\"metoda\":\"Skóra (punktowo)\",\"dawka\":\"1 kropla w 1 kropli oleju bazowego\"},{\"metoda\":\"Dyfuzja\",\"dawka\":\"3 do 4 krople / 100 ml wody\"},{\"metoda\":\"Dom\",\"dawka\":\"20 kropli / 500 ml wody z octem\"}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "bezpieczenstwo",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"list\",\"listType\":\"unordered\",\"children\":[{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Może utleniać się z czasem: zużyć w 12 miesięcy od otwarcia.\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"U dzieci od 6 lat, tylko zewnętrznie.\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Nie stosować doustnie.\"}]}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "receptury_slugs",
+        "type": "list.single_line_text_field",
+        "value": "[\"na-tradzik\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "kompendium_slug",
+        "type": "single_line_text_field",
+        "value": "drzewo-herbaciane"
+      }
+    ]
+  },
+  {
+    "handle": "eukaliptus-bio",
+    "title": "Eukaliptus gałkowy BIO",
+    "descriptionHtml": "<p>Eukaliptus gałkowy BIO (Eucalyptus globulus), olejek eteryczny z certyfikatem BIO z analizą GC/MS partii EUC-01.26. uczucie zatkanego nosa, jesienna dyfuzja, masaż klatki piersiowej (dorośli).</p>",
+    "productType": "Olejek eteryczny",
+    "vendor": "Aromatarius",
+    "status": "ACTIVE",
+    "tags": [
+      "bio",
+      "potrzeba:oddychanie",
+      "potrzeba:odpornosc",
+      "zapach:ziolowy",
+      "uzycie:dyfuzja",
+      "uzycie:inhalacja",
+      "uzycie:skora"
+    ],
+    "productOptions": [
+      {
+        "name": "Pojemność",
+        "position": 1,
+        "values": [
+          {
+            "name": "10 ml"
+          },
+          {
+            "name": "30 ml"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "10 ml"
+          }
+        ],
+        "sku": "EUKALIPTUSBIO-10",
+        "price": "32.00",
+        "compareAtPrice": null,
+        "position": 1,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 45
+            }
+          }
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "30 ml"
+          }
+        ],
+        "sku": "EUKALIPTUSBIO-30",
+        "price": "79.00",
+        "compareAtPrice": null,
+        "position": 2,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 80
+            }
+          }
+        }
+      }
+    ],
+    "seo": {
+      "title": null,
+      "description": null
+    },
+    "metafields": [
+      {
+        "namespace": "aromatarius",
+        "key": "nazwa_lacinska",
+        "type": "single_line_text_field",
+        "value": "Eucalyptus globulus"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "rodzina_botaniczna",
+        "type": "single_line_text_field",
+        "value": "Myrtaceae (mirtowate)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "czesc_rosliny",
+        "type": "single_line_text_field",
+        "value": "liście"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "metoda_ekstrakcji",
+        "type": "single_line_text_field",
+        "value": "destylacja parą wodną"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "chemotyp",
+        "type": "single_line_text_field",
+        "value": "1,8-cyneol"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "pochodzenie",
+        "type": "single_line_text_field",
+        "value": "Portugalia"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "certyfikat_bio",
+        "type": "single_line_text_field",
+        "value": "PL-EKO-07 (rolnictwo UE / spoza UE)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "numer_partii",
+        "type": "single_line_text_field",
+        "value": "EUC-01.26"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "glowne_skladniki",
+        "type": "json",
+        "value": "[{\"nazwa\":\"1,8-cyneol\",\"procent\":78.9},{\"nazwa\":\"alfa-pinen\",\"procent\":8.1},{\"nazwa\":\"limonen\",\"procent\":4.4}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "na_co",
+        "type": "list.single_line_text_field",
+        "value": "[\"uczucie zatkanego nosa\",\"jesienna dyfuzja\",\"masaż klatki piersiowej (dorośli)\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "zapach_opis",
+        "type": "single_line_text_field",
+        "value": "świeży, kamforowy, przenikliwy"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "wlasciwosci",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Eukaliptus gałkowy to klasyk sezonu jesienno-zimowego. Bardzo wysoka zawartość 1,8-cyneolu odpowiada za jego świeży, „otwierający” zapach, tradycyjnie wykorzystywany w inhalacjach.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "jak_stosowac",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Inhalacja parowa (dorośli), dyfuzja, masaż klatki piersiowej w oleju 2 %.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "dawkowanie",
+        "type": "json",
+        "value": "[{\"metoda\":\"Dyfuzja\",\"dawka\":\"3 do 5 kropli / 100 ml wody\"},{\"metoda\":\"Inhalacja parowa\",\"dawka\":\"1 do 2 krople do miski gorącej wody (dorośli)\"},{\"metoda\":\"Skóra\",\"dawka\":\"2 % w oleju bazowym\"}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "bezpieczenstwo",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"list\",\"listType\":\"unordered\",\"children\":[{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Nie stosować u dzieci poniżej 6 lat (w pobliżu twarzy poniżej 10 lat).\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Nie stosować w astmie bez konsultacji.\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Nie stosować doustnie.\"}]}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "receptury_slugs",
+        "type": "list.single_line_text_field",
+        "value": "[\"na-katar\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "kompendium_slug",
+        "type": "single_line_text_field",
+        "value": "eukaliptus"
+      }
+    ]
+  },
+  {
+    "handle": "ravintsara-bio",
+    "title": "Ravintsara BIO",
+    "descriptionHtml": "<p>Ravintsara BIO (Cinnamomum camphora ct. cineol), olejek eteryczny z certyfikatem BIO z analizą GC/MS partii RAV-03.26. wsparcie w sezonie infekcyjnym, dyfuzja w domu z dziećmi, poranna energia.</p>",
+    "productType": "Olejek eteryczny",
+    "vendor": "Aromatarius",
+    "status": "ACTIVE",
+    "tags": [
+      "bio",
+      "bestseller",
+      "potrzeba:odpornosc",
+      "potrzeba:oddychanie",
+      "potrzeba:dzieci",
+      "zapach:ziolowy",
+      "uzycie:dyfuzja",
+      "uzycie:skora",
+      "uzycie:inhalacja",
+      "bezpieczny:dzieci3"
+    ],
+    "productOptions": [
+      {
+        "name": "Pojemność",
+        "position": 1,
+        "values": [
+          {
+            "name": "5 ml"
+          },
+          {
+            "name": "10 ml"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "5 ml"
+          }
+        ],
+        "sku": "RAVINTSARABIO-5",
+        "price": "36.00",
+        "compareAtPrice": null,
+        "position": 1,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 30
+            }
+          }
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "10 ml"
+          }
+        ],
+        "sku": "RAVINTSARABIO-10",
+        "price": "59.00",
+        "compareAtPrice": null,
+        "position": 2,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 45
+            }
+          }
+        }
+      }
+    ],
+    "seo": {
+      "title": null,
+      "description": null
+    },
+    "metafields": [
+      {
+        "namespace": "aromatarius",
+        "key": "nazwa_lacinska",
+        "type": "single_line_text_field",
+        "value": "Cinnamomum camphora ct. cineol"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "rodzina_botaniczna",
+        "type": "single_line_text_field",
+        "value": "Lauraceae (wawrzynowate)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "czesc_rosliny",
+        "type": "single_line_text_field",
+        "value": "liście"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "metoda_ekstrakcji",
+        "type": "single_line_text_field",
+        "value": "destylacja parą wodną"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "chemotyp",
+        "type": "single_line_text_field",
+        "value": "1,8-cyneol"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "pochodzenie",
+        "type": "single_line_text_field",
+        "value": "Madagaskar"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "certyfikat_bio",
+        "type": "single_line_text_field",
+        "value": "PL-EKO-07 (rolnictwo UE / spoza UE)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "numer_partii",
+        "type": "single_line_text_field",
+        "value": "RAV-03.26"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "glowne_skladniki",
+        "type": "json",
+        "value": "[{\"nazwa\":\"1,8-cyneol\",\"procent\":58.2},{\"nazwa\":\"sabinen\",\"procent\":14.7},{\"nazwa\":\"alfa-terpineol\",\"procent\":7.3}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "na_co",
+        "type": "list.single_line_text_field",
+        "value": "[\"wsparcie w sezonie infekcyjnym\",\"dyfuzja w domu z dziećmi\",\"poranna energia\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "zapach_opis",
+        "type": "single_line_text_field",
+        "value": "świeży, łagodniejszy niż eukaliptus, lekko kamforowy"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "wlasciwosci",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Ravintsara to jeden z najczęściej polecanych olejków na sezon jesienno-zimowy w aromaterapii francuskiej. Łagodniejsza od eukaliptusa, dobrze tolerowana przez skórę.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "jak_stosowac",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Dyfuzja rano, kilka kropli w oleju na klatkę piersiową i stopy. Łączy się z cytryną i drzewem herbacianym.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "dawkowanie",
+        "type": "json",
+        "value": "[{\"metoda\":\"Dyfuzja\",\"dawka\":\"4 do 6 kropli / 100 ml wody\"},{\"metoda\":\"Skóra\",\"dawka\":\"2 do 3 % w oleju bazowym, klatka piersiowa i stopy\"},{\"metoda\":\"Inhalacja\",\"dawka\":\"2 krople na chusteczkę\"}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "bezpieczenstwo",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"list\",\"listType\":\"unordered\",\"children\":[{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"U dzieci od 3 lat w dyfuzji, na skórę od 6 lat w 1 %.\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"W ciąży po 1. trymestrze, zewnętrznie.\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Nie mylić z kamforą ani z ravensarą (\"},{\"type\":\"text\",\"value\":\"Ravensara aromatica\",\"italic\":true},{\"type\":\"text\",\"value\":\").\"}]}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "receptury_slugs",
+        "type": "list.single_line_text_field",
+        "value": "[\"na-odpornosc\",\"na-katar\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "kompendium_slug",
+        "type": "single_line_text_field",
+        "value": "ravintsara"
+      }
+    ]
+  },
+  {
+    "handle": "cytryna-bio",
+    "title": "Cytryna BIO",
+    "descriptionHtml": "<p>Cytryna BIO (Citrus limon), olejek eteryczny z certyfikatem BIO z analizą GC/MS partii CYT-06.26. oczyszczanie powietrza w dyfuzji, poranna świeżość, mieszanki do sprzątania.</p>",
+    "productType": "Olejek eteryczny",
+    "vendor": "Aromatarius",
+    "status": "ACTIVE",
+    "tags": [
+      "bio",
+      "potrzeba:odpornosc",
+      "potrzeba:dom",
+      "potrzeba:stres",
+      "zapach:cytrusowy",
+      "uzycie:dyfuzja",
+      "fototoksyczny"
+    ],
+    "productOptions": [
+      {
+        "name": "Pojemność",
+        "position": 1,
+        "values": [
+          {
+            "name": "10 ml"
+          },
+          {
+            "name": "30 ml"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "10 ml"
+          }
+        ],
+        "sku": "CYTRYNABIO-10",
+        "price": "29.00",
+        "compareAtPrice": "34.00",
+        "position": 1,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 45
+            }
+          }
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "30 ml"
+          }
+        ],
+        "sku": "CYTRYNABIO-30",
+        "price": "69.00",
+        "compareAtPrice": null,
+        "position": 2,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 80
+            }
+          }
+        }
+      }
+    ],
+    "seo": {
+      "title": null,
+      "description": null
+    },
+    "metafields": [
+      {
+        "namespace": "aromatarius",
+        "key": "nazwa_lacinska",
+        "type": "single_line_text_field",
+        "value": "Citrus limon"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "rodzina_botaniczna",
+        "type": "single_line_text_field",
+        "value": "Rutaceae (rutowate)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "czesc_rosliny",
+        "type": "single_line_text_field",
+        "value": "skórka owocu"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "metoda_ekstrakcji",
+        "type": "single_line_text_field",
+        "value": "tłoczenie na zimno"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "pochodzenie",
+        "type": "single_line_text_field",
+        "value": "Włochy (Sycylia)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "certyfikat_bio",
+        "type": "single_line_text_field",
+        "value": "PL-EKO-07 (rolnictwo UE / spoza UE)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "numer_partii",
+        "type": "single_line_text_field",
+        "value": "CYT-06.26"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "glowne_skladniki",
+        "type": "json",
+        "value": "[{\"nazwa\":\"limonen\",\"procent\":66.8},{\"nazwa\":\"beta-pinen\",\"procent\":11.2},{\"nazwa\":\"gamma-terpinen\",\"procent\":9.1}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "na_co",
+        "type": "list.single_line_text_field",
+        "value": "[\"oczyszczanie powietrza w dyfuzji\",\"poranna świeżość\",\"mieszanki do sprzątania\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "zapach_opis",
+        "type": "single_line_text_field",
+        "value": "cytrusowy, czysty, słoneczny"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "wlasciwosci",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Cytryna to najprostszy sposób na odświeżenie domu. Tradycyjnie stosowana w dyfuzji w sezonie infekcyjnym i jako składnik domowych środków czystości.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "jak_stosowac",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Dyfuzja solo lub z ravintsarą i drzewem herbacianym. Na skórę tylko wieczorem, ze względu na fototoksyczność.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "dawkowanie",
+        "type": "json",
+        "value": "[{\"metoda\":\"Dyfuzja\",\"dawka\":\"5 do 8 kropli / 100 ml wody\"},{\"metoda\":\"Skóra\",\"dawka\":\"maks. 2 %, nie przed słońcem\"}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "bezpieczenstwo",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"list\",\"listType\":\"unordered\",\"children\":[{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Fototoksyczny\",\"bold\":true},{\"type\":\"text\",\"value\":\" na skórze.\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Zużyć w 12 miesięcy od otwarcia.\"}]}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "receptury_slugs",
+        "type": "list.single_line_text_field",
+        "value": "[\"na-odpornosc\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "kompendium_slug",
+        "type": "single_line_text_field",
+        "value": "cytryna"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "najnizsza_cena_30",
+        "type": "money",
+        "value": "{\"amount\":\"34.00\",\"currency_code\":\"PLN\"}"
+      }
+    ]
+  },
+  {
+    "handle": "rozmaryn-cyneol-bio",
+    "title": "Rozmaryn ct. cyneol BIO",
+    "descriptionHtml": "<p>Rozmaryn ct. cyneol BIO (Rosmarinus officinalis ct. 1,8-cineole), olejek eteryczny z certyfikatem BIO z analizą GC/MS partii ROS-04.26. koncentracja i praca umysłowa, pielęgnacja skóry głowy, zmęczone mięśnie.</p>",
+    "productType": "Olejek eteryczny",
+    "vendor": "Aromatarius",
+    "status": "ACTIVE",
+    "tags": [
+      "bio",
+      "potrzeba:oddychanie",
+      "potrzeba:pielegnacja",
+      "potrzeba:bol",
+      "zapach:ziolowy",
+      "uzycie:dyfuzja",
+      "uzycie:skora",
+      "uzycie:inhalacja"
+    ],
+    "productOptions": [
+      {
+        "name": "Pojemność",
+        "position": 1,
+        "values": [
+          {
+            "name": "10 ml"
+          },
+          {
+            "name": "30 ml"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "10 ml"
+          }
+        ],
+        "sku": "ROZMARYNCYNEOLBIO-10",
+        "price": "36.00",
+        "compareAtPrice": null,
+        "position": 1,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 45
+            }
+          }
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "30 ml"
+          }
+        ],
+        "sku": "ROZMARYNCYNEOLBIO-30",
+        "price": "89.00",
+        "compareAtPrice": null,
+        "position": 2,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 80
+            }
+          }
+        }
+      }
+    ],
+    "seo": {
+      "title": null,
+      "description": null
+    },
+    "metafields": [
+      {
+        "namespace": "aromatarius",
+        "key": "nazwa_lacinska",
+        "type": "single_line_text_field",
+        "value": "Rosmarinus officinalis ct. 1,8-cineole"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "rodzina_botaniczna",
+        "type": "single_line_text_field",
+        "value": "Lamiaceae (jasnotowate)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "czesc_rosliny",
+        "type": "single_line_text_field",
+        "value": "kwitnące wierzchołki"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "metoda_ekstrakcji",
+        "type": "single_line_text_field",
+        "value": "destylacja parą wodną"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "chemotyp",
+        "type": "single_line_text_field",
+        "value": "1,8-cyneol"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "pochodzenie",
+        "type": "single_line_text_field",
+        "value": "Tunezja"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "certyfikat_bio",
+        "type": "single_line_text_field",
+        "value": "PL-EKO-07 (rolnictwo UE / spoza UE)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "numer_partii",
+        "type": "single_line_text_field",
+        "value": "ROS-04.26"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "glowne_skladniki",
+        "type": "json",
+        "value": "[{\"nazwa\":\"1,8-cyneol\",\"procent\":46.5},{\"nazwa\":\"alfa-pinen\",\"procent\":12.3},{\"nazwa\":\"kamfora\",\"procent\":10.8}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "na_co",
+        "type": "list.single_line_text_field",
+        "value": "[\"koncentracja i praca umysłowa\",\"pielęgnacja skóry głowy\",\"zmęczone mięśnie\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "zapach_opis",
+        "type": "single_line_text_field",
+        "value": "ziołowy, świeży, lekko kamforowy"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "wlasciwosci",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Rozmaryn cyneolowy to chemotyp najbardziej „oddechowy” i najbezpieczniejszy z trzech rozmarynów. Tradycyjnie stosowany w dyfuzji podczas pracy i w pielęgnacji skóry głowy.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "jak_stosowac",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Dyfuzja w ciągu dnia. 2 do 3 krople w szamponie lub oleju do skóry głowy.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "dawkowanie",
+        "type": "json",
+        "value": "[{\"metoda\":\"Dyfuzja\",\"dawka\":\"3 do 5 kropli / 100 ml wody\"},{\"metoda\":\"Skóra\",\"dawka\":\"2 % w oleju bazowym\"},{\"metoda\":\"Włosy\",\"dawka\":\"2 do 3 krople / 10 ml oleju\"}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "bezpieczenstwo",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"list\",\"listType\":\"unordered\",\"children\":[{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Nie stosować w ciąży i u dzieci poniżej 6 lat.\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Ostrożnie przy padaczce (kamfora).\"}]}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "receptury_slugs",
+        "type": "list.single_line_text_field",
+        "value": "[\"na-koncentracje\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "kompendium_slug",
+        "type": "single_line_text_field",
+        "value": "rozmaryn-cyneol"
+      }
+    ]
+  },
+  {
+    "handle": "geranium-bio",
+    "title": "Geranium (pelargonia) BIO",
+    "descriptionHtml": "<p>Geranium (pelargonia) BIO (Pelargonium graveolens), olejek eteryczny z certyfikatem BIO z analizą GC/MS partii GER-02.26. pielęgnacja cery mieszanej, napięcie emocjonalne, mieszanki kwiatowe.</p>",
+    "productType": "Olejek eteryczny",
+    "vendor": "Aromatarius",
+    "status": "ACTIVE",
+    "tags": [
+      "bio",
+      "potrzeba:skora",
+      "potrzeba:stres",
+      "potrzeba:pielegnacja",
+      "zapach:kwiatowy",
+      "uzycie:dyfuzja",
+      "uzycie:skora"
+    ],
+    "productOptions": [
+      {
+        "name": "Pojemność",
+        "position": 1,
+        "values": [
+          {
+            "name": "5 ml"
+          },
+          {
+            "name": "10 ml"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "5 ml"
+          }
+        ],
+        "sku": "GERANIUMBIO-5",
+        "price": "42.00",
+        "compareAtPrice": null,
+        "position": 1,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 30
+            }
+          }
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "10 ml"
+          }
+        ],
+        "sku": "GERANIUMBIO-10",
+        "price": "69.00",
+        "compareAtPrice": null,
+        "position": 2,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 45
+            }
+          }
+        }
+      }
+    ],
+    "seo": {
+      "title": null,
+      "description": null
+    },
+    "metafields": [
+      {
+        "namespace": "aromatarius",
+        "key": "nazwa_lacinska",
+        "type": "single_line_text_field",
+        "value": "Pelargonium graveolens"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "rodzina_botaniczna",
+        "type": "single_line_text_field",
+        "value": "Geraniaceae (bodziszkowate)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "czesc_rosliny",
+        "type": "single_line_text_field",
+        "value": "liście"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "metoda_ekstrakcji",
+        "type": "single_line_text_field",
+        "value": "destylacja parą wodną"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "pochodzenie",
+        "type": "single_line_text_field",
+        "value": "Egipt"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "certyfikat_bio",
+        "type": "single_line_text_field",
+        "value": "PL-EKO-07 (rolnictwo UE / spoza UE)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "numer_partii",
+        "type": "single_line_text_field",
+        "value": "GER-02.26"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "glowne_skladniki",
+        "type": "json",
+        "value": "[{\"nazwa\":\"cytronelol\",\"procent\":31.2},{\"nazwa\":\"geraniol\",\"procent\":14.9},{\"nazwa\":\"mrówczan cytronelylu\",\"procent\":9.7}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "na_co",
+        "type": "list.single_line_text_field",
+        "value": "[\"pielęgnacja cery mieszanej\",\"napięcie emocjonalne\",\"mieszanki kwiatowe\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "zapach_opis",
+        "type": "single_line_text_field",
+        "value": "różano-zielony, intensywny"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "wlasciwosci",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Geranium jest w aromaterapii olejkiem „równowagi”: w pielęgnacji skóry i w mieszankach na napięcie. Zapach bliski róży, w ułamku ceny.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "jak_stosowac",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"1 kropla w kremie na noc. W dyfuzji z bergamotką i lawendą.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "dawkowanie",
+        "type": "json",
+        "value": "[{\"metoda\":\"Dyfuzja\",\"dawka\":\"2 do 4 krople / 100 ml wody\"},{\"metoda\":\"Skóra\",\"dawka\":\"1 % w oleju lub kremie\"}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "bezpieczenstwo",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"list\",\"listType\":\"unordered\",\"children\":[{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Może uczulać osoby wrażliwe na geraniol: test na skórze.\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"W ciąży po 1. trymestrze.\"}]}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "receptury_slugs",
+        "type": "list.single_line_text_field",
+        "value": "[\"na-stres\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "kompendium_slug",
+        "type": "single_line_text_field",
+        "value": "geranium"
+      }
+    ]
+  },
+  {
+    "handle": "cedr-atlaski-bio",
+    "title": "Cedr atlaski BIO",
+    "descriptionHtml": "<p>Cedr atlaski BIO (Cedrus atlantica), olejek eteryczny z certyfikatem BIO z analizą GC/MS partii CED-11.25. wieczorne ugruntowanie, pielęgnacja skóry głowy, zapach drzewny w domu.</p>",
+    "productType": "Olejek eteryczny",
+    "vendor": "Aromatarius",
+    "status": "ACTIVE",
+    "tags": [
+      "bio",
+      "potrzeba:sen",
+      "potrzeba:pielegnacja",
+      "potrzeba:dom",
+      "zapach:drzewny",
+      "uzycie:dyfuzja",
+      "uzycie:skora"
+    ],
+    "productOptions": [
+      {
+        "name": "Pojemność",
+        "position": 1,
+        "values": [
+          {
+            "name": "10 ml"
+          },
+          {
+            "name": "30 ml"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "10 ml"
+          }
+        ],
+        "sku": "CEDRATLASKIBIO-10",
+        "price": "38.00",
+        "compareAtPrice": null,
+        "position": 1,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 45
+            }
+          }
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "30 ml"
+          }
+        ],
+        "sku": "CEDRATLASKIBIO-30",
+        "price": "92.00",
+        "compareAtPrice": null,
+        "position": 2,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 80
+            }
+          }
+        }
+      }
+    ],
+    "seo": {
+      "title": null,
+      "description": null
+    },
+    "metafields": [
+      {
+        "namespace": "aromatarius",
+        "key": "nazwa_lacinska",
+        "type": "single_line_text_field",
+        "value": "Cedrus atlantica"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "rodzina_botaniczna",
+        "type": "single_line_text_field",
+        "value": "Pinaceae (sosnowate)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "czesc_rosliny",
+        "type": "single_line_text_field",
+        "value": "drewno"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "metoda_ekstrakcji",
+        "type": "single_line_text_field",
+        "value": "destylacja parą wodną"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "pochodzenie",
+        "type": "single_line_text_field",
+        "value": "Maroko"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "certyfikat_bio",
+        "type": "single_line_text_field",
+        "value": "PL-EKO-07 (rolnictwo UE / spoza UE)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "numer_partii",
+        "type": "single_line_text_field",
+        "value": "CED-11.25"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "glowne_skladniki",
+        "type": "json",
+        "value": "[{\"nazwa\":\"beta-himachalen\",\"procent\":41.6},{\"nazwa\":\"alfa-himachalen\",\"procent\":15.2},{\"nazwa\":\"gamma-himachalen\",\"procent\":9.9}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "na_co",
+        "type": "list.single_line_text_field",
+        "value": "[\"wieczorne ugruntowanie\",\"pielęgnacja skóry głowy\",\"zapach drzewny w domu\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "zapach_opis",
+        "type": "single_line_text_field",
+        "value": "drzewny, ciepły, lekko słodki"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "wlasciwosci",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Cedr atlaski daje głęboką, drzewną bazę mieszankom. Tradycyjnie stosowany wieczorem i w pielęgnacji skóry głowy.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "jak_stosowac",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Dyfuzja z lawendą i pomarańczą. 2 krople w oleju do skóry głowy.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "dawkowanie",
+        "type": "json",
+        "value": "[{\"metoda\":\"Dyfuzja\",\"dawka\":\"3 do 4 krople / 100 ml wody\"},{\"metoda\":\"Skóra\",\"dawka\":\"1 do 2 % w oleju bazowym\"}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "bezpieczenstwo",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"list\",\"listType\":\"unordered\",\"children\":[{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Nie stosować w ciąży.\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Nie stosować doustnie.\"}]}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "receptury_slugs",
+        "type": "list.single_line_text_field",
+        "value": "[\"na-sen\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "kompendium_slug",
+        "type": "single_line_text_field",
+        "value": "cedr-atlaski"
+      }
+    ]
+  },
+  {
+    "handle": "pomarancza-bio",
+    "title": "Pomarańcza słodka BIO",
+    "descriptionHtml": "<p>Pomarańcza słodka BIO (Citrus sinensis), olejek eteryczny z certyfikatem BIO z analizą GC/MS partii POM-05.26. radosny zapach domu, dyfuzja z dziećmi, mieszanki świąteczne.</p>",
+    "productType": "Olejek eteryczny",
+    "vendor": "Aromatarius",
+    "status": "ACTIVE",
+    "tags": [
+      "bio",
+      "nowosc",
+      "potrzeba:dom",
+      "potrzeba:dzieci",
+      "potrzeba:stres",
+      "zapach:cytrusowy",
+      "uzycie:dyfuzja",
+      "bezpieczny:dzieci3",
+      "bezpieczny:ciaza"
+    ],
+    "productOptions": [
+      {
+        "name": "Pojemność",
+        "position": 1,
+        "values": [
+          {
+            "name": "10 ml"
+          },
+          {
+            "name": "30 ml"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "10 ml"
+          }
+        ],
+        "sku": "POMARANCZABIO-10",
+        "price": "26.00",
+        "compareAtPrice": null,
+        "position": 1,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 45
+            }
+          }
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "30 ml"
+          }
+        ],
+        "sku": "POMARANCZABIO-30",
+        "price": "59.00",
+        "compareAtPrice": null,
+        "position": 2,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 80
+            }
+          }
+        }
+      }
+    ],
+    "seo": {
+      "title": null,
+      "description": null
+    },
+    "metafields": [
+      {
+        "namespace": "aromatarius",
+        "key": "nazwa_lacinska",
+        "type": "single_line_text_field",
+        "value": "Citrus sinensis"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "rodzina_botaniczna",
+        "type": "single_line_text_field",
+        "value": "Rutaceae (rutowate)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "czesc_rosliny",
+        "type": "single_line_text_field",
+        "value": "skórka owocu"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "metoda_ekstrakcji",
+        "type": "single_line_text_field",
+        "value": "tłoczenie na zimno"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "pochodzenie",
+        "type": "single_line_text_field",
+        "value": "Brazylia"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "certyfikat_bio",
+        "type": "single_line_text_field",
+        "value": "PL-EKO-07 (rolnictwo UE / spoza UE)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "numer_partii",
+        "type": "single_line_text_field",
+        "value": "POM-05.26"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "glowne_skladniki",
+        "type": "json",
+        "value": "[{\"nazwa\":\"limonen\",\"procent\":94.1},{\"nazwa\":\"mircen\",\"procent\":1.9},{\"nazwa\":\"linalol\",\"procent\":0.6}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "na_co",
+        "type": "list.single_line_text_field",
+        "value": "[\"radosny zapach domu\",\"dyfuzja z dziećmi\",\"mieszanki świąteczne\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "zapach_opis",
+        "type": "single_line_text_field",
+        "value": "słodki, soczysty, owocowy"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "wlasciwosci",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Pomarańcza słodka jest najłagodniejszym olejkiem cytrusowym, nie fototoksycznym. Idealna do dyfuzji w domu z dziećmi.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "jak_stosowac",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Dyfuzja solo lub z cedrem, cynamonem, lawendą.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "dawkowanie",
+        "type": "json",
+        "value": "[{\"metoda\":\"Dyfuzja\",\"dawka\":\"5 do 8 kropli / 100 ml wody\"},{\"metoda\":\"Skóra\",\"dawka\":\"2 % w oleju bazowym\"}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "bezpieczenstwo",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"list\",\"listType\":\"unordered\",\"children\":[{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Zużyć w 12 miesięcy od otwarcia (utlenianie).\"}]}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "receptury_slugs",
+        "type": "list.single_line_text_field",
+        "value": "[\"na-sen\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "kompendium_slug",
+        "type": "single_line_text_field",
+        "value": "pomarancza"
+      }
+    ]
+  },
+  {
+    "handle": "hydrolat-rozany-bio",
+    "title": "Hydrolat różany BIO",
+    "descriptionHtml": "<p>Hydrolat różany BIO (Rosa damascena), hydrolat z certyfikatem BIO z analizą GC/MS partii HYD-ROSA-03.26. tonik do każdej cery, odświeżenie w ciągu dnia, delikatna skóra.</p>",
+    "productType": "Hydrolat",
+    "vendor": "Aromatarius",
+    "status": "ACTIVE",
+    "tags": [
+      "bio",
+      "potrzeba:skora",
+      "potrzeba:pielegnacja",
+      "zapach:kwiatowy",
+      "uzycie:skora",
+      "bezpieczny:ciaza",
+      "bezpieczny:dzieci3"
+    ],
+    "productOptions": [
+      {
+        "name": "Pojemność",
+        "position": 1,
+        "values": [
+          {
+            "name": "100 ml"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "100 ml"
+          }
+        ],
+        "sku": "HYDROLATROZANYBIO-100",
+        "price": "39.00",
+        "compareAtPrice": null,
+        "position": 1,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 160
+            }
+          }
+        }
+      }
+    ],
+    "seo": {
+      "title": null,
+      "description": null
+    },
+    "metafields": [
+      {
+        "namespace": "aromatarius",
+        "key": "nazwa_lacinska",
+        "type": "single_line_text_field",
+        "value": "Rosa damascena"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "rodzina_botaniczna",
+        "type": "single_line_text_field",
+        "value": "Rosaceae (różowate)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "czesc_rosliny",
+        "type": "single_line_text_field",
+        "value": "płatki"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "metoda_ekstrakcji",
+        "type": "single_line_text_field",
+        "value": "destylacja parą wodną (faza wodna)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "pochodzenie",
+        "type": "single_line_text_field",
+        "value": "Bułgaria"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "certyfikat_bio",
+        "type": "single_line_text_field",
+        "value": "PL-EKO-07 (rolnictwo UE / spoza UE)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "numer_partii",
+        "type": "single_line_text_field",
+        "value": "HYD-ROSA-03.26"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "glowne_skladniki",
+        "type": "json",
+        "value": "[{\"nazwa\":\"fenyloetanol\",\"procent\":62},{\"nazwa\":\"cytronelol\",\"procent\":15.4},{\"nazwa\":\"geraniol\",\"procent\":8.8}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "na_co",
+        "type": "list.single_line_text_field",
+        "value": "[\"tonik do każdej cery\",\"odświeżenie w ciągu dnia\",\"delikatna skóra\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "zapach_opis",
+        "type": "single_line_text_field",
+        "value": "różany, subtelny"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "wlasciwosci",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Hydrolat różany to woda z destylacji płatków róży damasceńskiej. Łagodny tonik odpowiedni do każdego typu cery, także w ciąży i u dzieci.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "jak_stosowac",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Spryskać twarz rano i wieczorem po oczyszczeniu. Przechowywać w lodówce.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "dawkowanie",
+        "type": "json",
+        "value": "[{\"metoda\":\"Skóra\",\"dawka\":\"bez rozcieńczania, jako tonik\"}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "bezpieczenstwo",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"list\",\"listType\":\"unordered\",\"children\":[{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Bez konserwantów: zużyć w 6 miesięcy, trzymać w lodówce.\"}]}]}]}"
+      }
+    ]
+  },
+  {
+    "handle": "olej-jojoba-bio",
+    "title": "Olej jojoba BIO",
+    "descriptionHtml": "<p>Olej jojoba BIO (Simmondsia chinensis), olej roślinny z certyfikatem BIO z analizą GC/MS partii JOJ-01.26. baza do olejków eterycznych, cera mieszana i tłusta, demakijaż.</p>",
+    "productType": "Olej roślinny",
+    "vendor": "Aromatarius",
+    "status": "ACTIVE",
+    "tags": [
+      "bio",
+      "potrzeba:skora",
+      "potrzeba:pielegnacja",
+      "uzycie:skora",
+      "bezpieczny:ciaza",
+      "bezpieczny:dzieci3"
+    ],
+    "productOptions": [
+      {
+        "name": "Pojemność",
+        "position": 1,
+        "values": [
+          {
+            "name": "100 ml"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "100 ml"
+          }
+        ],
+        "sku": "OLEJJOJOBABIO-100",
+        "price": "49.00",
+        "compareAtPrice": null,
+        "position": 1,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 160
+            }
+          }
+        }
+      }
+    ],
+    "seo": {
+      "title": null,
+      "description": null
+    },
+    "metafields": [
+      {
+        "namespace": "aromatarius",
+        "key": "nazwa_lacinska",
+        "type": "single_line_text_field",
+        "value": "Simmondsia chinensis"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "rodzina_botaniczna",
+        "type": "single_line_text_field",
+        "value": "Simmondsiaceae"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "czesc_rosliny",
+        "type": "single_line_text_field",
+        "value": "nasiona"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "metoda_ekstrakcji",
+        "type": "single_line_text_field",
+        "value": "tłoczenie na zimno"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "pochodzenie",
+        "type": "single_line_text_field",
+        "value": "Izrael"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "certyfikat_bio",
+        "type": "single_line_text_field",
+        "value": "PL-EKO-07 (rolnictwo UE / spoza UE)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "numer_partii",
+        "type": "single_line_text_field",
+        "value": "JOJ-01.26"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "glowne_skladniki",
+        "type": "json",
+        "value": "[{\"nazwa\":\"estry woskowe\",\"procent\":97}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "na_co",
+        "type": "list.single_line_text_field",
+        "value": "[\"baza do olejków eterycznych\",\"cera mieszana i tłusta\",\"demakijaż\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "zapach_opis",
+        "type": "single_line_text_field",
+        "value": "neutralny"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "wlasciwosci",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Jojoba to ciekły wosk o składzie bliskim sebum. Najbardziej uniwersalna baza do rozcieńczania olejków eterycznych, nie jełczeje.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "jak_stosowac",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Rozcieńczaj olejki eteryczne: 2 do 4 krople na 10 ml (1 do 2 %).\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "dawkowanie",
+        "type": "json",
+        "value": "[{\"metoda\":\"Skóra\",\"dawka\":\"bez ograniczeń, baza\"}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "bezpieczenstwo",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"list\",\"listType\":\"unordered\",\"children\":[{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Brak znanych przeciwwskazań.\"}]}]}]}"
+      }
+    ]
+  },
+  {
+    "handle": "olej-migdalowy-bio",
+    "title": "Olej ze słodkich migdałów BIO",
+    "descriptionHtml": "<p>Olej ze słodkich migdałów BIO (Prunus amygdalus dulcis), olej roślinny z certyfikatem BIO z analizą GC/MS partii MIG-02.26. masaż, skóra dziecka, baza do mieszanek relaksacyjnych.</p>",
+    "productType": "Olej roślinny",
+    "vendor": "Aromatarius",
+    "status": "ACTIVE",
+    "tags": [
+      "bio",
+      "potrzeba:skora",
+      "potrzeba:dzieci",
+      "potrzeba:pielegnacja",
+      "uzycie:skora",
+      "bezpieczny:ciaza",
+      "bezpieczny:dzieci3"
+    ],
+    "productOptions": [
+      {
+        "name": "Pojemność",
+        "position": 1,
+        "values": [
+          {
+            "name": "100 ml"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Pojemność",
+            "name": "100 ml"
+          }
+        ],
+        "sku": "OLEJMIGDALOWYBIO-100",
+        "price": "29.00",
+        "compareAtPrice": null,
+        "position": 1,
+        "inventoryPolicy": "DENY",
+        "inventoryItem": {
+          "tracked": true,
+          "measurement": {
+            "weight": {
+              "unit": "GRAMS",
+              "value": 160
+            }
+          }
+        }
+      }
+    ],
+    "seo": {
+      "title": null,
+      "description": null
+    },
+    "metafields": [
+      {
+        "namespace": "aromatarius",
+        "key": "nazwa_lacinska",
+        "type": "single_line_text_field",
+        "value": "Prunus amygdalus dulcis"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "rodzina_botaniczna",
+        "type": "single_line_text_field",
+        "value": "Rosaceae (różowate)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "czesc_rosliny",
+        "type": "single_line_text_field",
+        "value": "nasiona"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "metoda_ekstrakcji",
+        "type": "single_line_text_field",
+        "value": "tłoczenie na zimno"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "pochodzenie",
+        "type": "single_line_text_field",
+        "value": "Hiszpania"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "certyfikat_bio",
+        "type": "single_line_text_field",
+        "value": "PL-EKO-07 (rolnictwo UE / spoza UE)"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "numer_partii",
+        "type": "single_line_text_field",
+        "value": "MIG-02.26"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "glowne_skladniki",
+        "type": "json",
+        "value": "[{\"nazwa\":\"kwas oleinowy\",\"procent\":68},{\"nazwa\":\"kwas linolowy\",\"procent\":22}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "na_co",
+        "type": "list.single_line_text_field",
+        "value": "[\"masaż\",\"skóra dziecka\",\"baza do mieszanek relaksacyjnych\"]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "zapach_opis",
+        "type": "single_line_text_field",
+        "value": "lekko orzechowy"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "wlasciwosci",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Klasyczna baza do masażu, łagodna i dobrze wchłanialna.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "jak_stosowac",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Baza do masażu: 2 do 4 krople olejku eterycznego na 10 ml.\"}]}]}"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "dawkowanie",
+        "type": "json",
+        "value": "[{\"metoda\":\"Skóra\",\"dawka\":\"bez ograniczeń, baza\"}]"
+      },
+      {
+        "namespace": "aromatarius",
+        "key": "bezpieczenstwo",
+        "type": "rich_text_field",
+        "value": "{\"type\":\"root\",\"children\":[{\"type\":\"list\",\"listType\":\"unordered\",\"children\":[{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Uwaga przy alergii na orzechy.\"}]}]}]}"
+      }
+    ]
+  }
+]

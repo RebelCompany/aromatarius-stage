@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Cytryna">
+  <rect width="600" height="600" fill="#fbf9f4"/>
+  <ellipse cx="300" cy="520" rx="140" ry="18" fill="#ece4d3"/>
+  <rect x="262" y="120" width="76" height="46" rx="6" fill="#1f3d2b"/>
+  <rect x="270" y="166" width="60" height="18" fill="#2f5a3f"/>
+  <path d="M230 200 Q230 184 246 184 H354 Q370 184 370 200 V470 Q370 500 340 500 H260 Q230 500 230 470 Z" fill="#3b2f2a" opacity="0.92"/>
+  <path d="M244 210 Q244 198 256 198 H344 Q356 198 356 210 V462 Q356 486 332 486 H268 Q244 486 244 462 Z" fill="#e0c53a" opacity="0.55"/>
+  <rect x="252" y="290" width="96" height="120" rx="4" fill="#fbf9f4"/>
+  <rect x="264" y="304" width="72" height="6" rx="3" fill="#1f3d2b"/>
+  <rect x="264" y="318" width="52" height="4" rx="2" fill="#5c5b57"/>
+  <circle cx="300" cy="360" r="20" fill="#e0c53a"/>
+  <rect x="264" y="390" width="72" height="4" rx="2" fill="#5c5b57"/>
+  <text x="300" y="560" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#1f3d2b">Cytryna</text>
+</svg>

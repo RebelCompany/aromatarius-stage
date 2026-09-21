@@ -1,26 +1,234 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Tokens de marque (docs/05-UX-UI-DESIGN-SYSTEM.md).
+ * Les variables shadcn (--primary, --background ...) sont mappées sur ces tokens.
+ */
+@theme {
+  --color-leaf-900: #1f3d2b;
+  --color-leaf-700: #2f5a3f;
+  --color-leaf-500: #4c8a5f;
+  --color-leaf-100: #e6f0e9;
+  --color-cream-50: #fbf9f4;
+  --color-sand-200: #ece4d3;
+  --color-amber-500: #c98a2b;
+  --color-ink-900: #1b1b1a;
+  --color-ink-600: #5c5b57;
+  --color-danger: #b23a3a;
+
+  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), "Fraunces", Georgia, serif;
+
+  --radius-md: 0.75rem;
+  --radius-full: 999px;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-serif);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: #fbf9f4;
+  --foreground: #1b1b1a;
+  --card: #ffffff;
+  --card-foreground: #1b1b1a;
+  --popover: #ffffff;
+  --popover-foreground: #1b1b1a;
+  --primary: #1f3d2b;
+  --primary-foreground: #fbf9f4;
+  --secondary: #e6f0e9;
+  --secondary-foreground: #1f3d2b;
+  --muted: #f3efe6;
+  --muted-foreground: #5c5b57;
+  --accent: #e6f0e9;
+  --accent-foreground: #1f3d2b;
+  --destructive: #b23a3a;
+  --border: #ece4d3;
+  --input: #ece4d3;
+  --ring: #4c8a5f;
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans scroll-smooth;
+    font-size: 16px;
+  }
+  @media (min-width: 1024px) {
+    html {
+      font-size: 17px;
+    }
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif text-leaf-900 tracking-tight;
+    text-wrap: balance;
+  }
+  h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl leading-[1.1];
+  }
+  h2 {
+    @apply text-2xl md:text-3xl leading-tight;
+  }
+  h3 {
+    @apply text-xl md:text-2xl leading-snug;
+  }
+  a {
+    @apply underline-offset-4;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-leaf-500;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Effet push du menu mobile (valeurs de la maquette Lovable) : la page devient une carte
+     arrondie, réduite à 92 %, poussée de 62vw vers la gauche au-dessus du panneau, fond vert pâle derrière */
+  .site-shell {
+    position: relative;
+    z-index: 20;
+    transform-origin: 0 center;
+    transform: translate(0) scale(1);
+    border-radius: 0;
+    box-shadow: none;
+    will-change: transform, border-radius, box-shadow;
+    transition:
+      transform 1.5s cubic-bezier(0.45, 0, 0.55, 1),
+      border-radius 1.5s cubic-bezier(0.45, 0, 0.55, 1),
+      box-shadow 1.5s cubic-bezier(0.45, 0, 0.55, 1);
+    background: var(--background);
+  }
+  html[data-menu-open] body {
+    background: var(--color-leaf-100);
+  }
+  html[data-menu-open] .site-shell {
+    height: 100dvh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 60;
+    transform: translate(-62vw) scale(0.92);
+    border-radius: 1.75rem;
+    box-shadow:
+      0 0 0 1px color-mix(in oklab, var(--foreground) 4%, transparent),
+      18px 0 60px -20px color-mix(in oklab, var(--foreground) 18%, transparent),
+      0 28px 70px -24px color-mix(in oklab, var(--foreground) 12%, transparent);
+  }
+  /* La bannière cookies reste hors du panneau : on la masque pendant que le menu est ouvert */
+  html[data-menu-open] [aria-labelledby="consent-title"] {
+    display: none;
+  }
+  @media (min-width: 1024px) {
+    .site-shell {
+      transition: none;
+    }
+    html[data-menu-open] body {
+      background: var(--background);
+    }
+    html[data-menu-open] .site-shell {
+      height: auto;
+      transform: none;
+      border-radius: 0;
+      box-shadow: none;
+      overflow: visible;
+      pointer-events: auto;
+      z-index: 20;
+    }
+  }
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .latin {
+    @apply font-serif italic text-ink-600;
+  }
+  /* Prose éditoriale (blog, kompendium, receptury, pages) */
+  .prose-aroma {
+    @apply max-w-[68ch] text-[1.05rem] leading-relaxed text-ink-900;
+  }
+  .prose-aroma h2 {
+    @apply mt-10 mb-4 scroll-mt-24;
+  }
+  .prose-aroma h3 {
+    @apply mt-8 mb-3 scroll-mt-24;
+  }
+  .prose-aroma p {
+    @apply my-4;
+  }
+  .prose-aroma ul,
+  .prose-aroma ol {
+    @apply my-4 pl-6;
+  }
+  .prose-aroma ul {
+    @apply list-disc;
+  }
+  .prose-aroma ol {
+    @apply list-decimal;
+  }
+  .prose-aroma li {
+    @apply my-1;
+  }
+  .prose-aroma a {
+    @apply text-leaf-500 underline hover:text-leaf-700;
+  }
+  .prose-aroma table {
+    @apply my-6 w-full border-collapse text-sm;
+  }
+  .prose-aroma th,
+  .prose-aroma td {
+    @apply border border-sand-200 px-3 py-2 text-left align-top;
+  }
+  .prose-aroma th {
+    @apply bg-leaf-100 font-semibold;
+  }
+  .prose-aroma blockquote {
+    @apply my-6 border-l-4 border-leaf-500 pl-4 text-ink-600;
+  }
+  .prose-aroma img {
+    @apply my-6 rounded-md;
+  }
+  .prose-aroma em {
+    @apply font-serif;
+  }
 }

@@ -39,3 +39,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# exports WooCommerce bruts (docs/07)
+/data/woo-export/*
+!/data/woo-export/.gitkeep
+/test-results
+/playwright-report
+
+.vercel
+.env*
+/data/product-images/
+/data/shopify-import.json
+/data/receptury-source.json
+/data/import-log.txt
