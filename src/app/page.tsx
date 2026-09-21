@@ -55,7 +55,7 @@ export default async function HomePage() {
         </div>
         <div className="order-2 relative aspect-[4/3] overflow-hidden rounded-md bg-leaf-100">
           <Image
-            src="/images/products/lawenda-bio.svg"
+            src="/images/products/drzewo-herbaciane-bio.svg"
             alt="Flakon olejku eterycznego Aromatarius z kartą analizy GC/MS"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
