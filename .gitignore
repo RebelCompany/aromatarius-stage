@@ -52,3 +52,6 @@ next-env.d.ts
 /data/shopify-import.json
 /data/receptury-source.json
 /data/import-log.txt
+
+# exception : le modele de variables doit etre versionne
+!.env.example
