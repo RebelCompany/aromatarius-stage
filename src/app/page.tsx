@@ -44,7 +44,7 @@ export default async function HomePage() {
               {pl.home.heroCta}
               <ArrowRight data-icon="inline-end" aria-hidden />
             </ButtonLink>
-            <ButtonLink href="/dobierz" variant="outline" size="lg" className="h-12 px-6 text-base">
+            <ButtonLink href="/dobierz" variant="outline" size="lg" className="h-auto min-h-12 whitespace-normal px-6 py-2 text-center text-base">
               <Compass data-icon="inline-start" aria-hidden />
               {pl.finder.homeCta}
             </ButtonLink>

@@ -56,8 +56,9 @@ export function Header() {
         </nav>
 
         {/* Desktop : recherche, compte, panier */}
-        <div className="ml-auto hidden items-center gap-1 lg:flex">
-          <SearchForm className="w-64" />
+        <div className="ml-auto hidden min-w-0 items-center gap-1 lg:flex">
+          {/* Champ fluide : a 1024 px une largeur fixe de 256 px faisait deborder la ligne */}
+          <SearchForm className="w-40 min-w-0 shrink xl:w-64" />
           <Link href="/konto" className="flex size-11 items-center justify-center rounded-full hover:bg-leaf-100" aria-label={pl.nav.account}>
             <User className="size-5" aria-hidden />
           </Link>
