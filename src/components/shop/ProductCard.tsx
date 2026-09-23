@@ -35,10 +35,10 @@ export function ProductCard({ product, priority = false, className }: Props) {
           className="transition-transform duration-300 group-hover:scale-[1.03]"
         />
         {product.onPromo && (
-          <Badge className="absolute right-2 top-2 bg-danger text-white">{pl.product.promoBadge}</Badge>
+          <Badge className="absolute right-2 top-2 bg-amber-500 text-ink-900">{pl.product.promoBadge}</Badge>
         )}
         <div className="absolute left-2 top-2 flex gap-1">
-          {product.isBio && <Badge className="bg-amber-500 text-white">{pl.product.bioBadge}</Badge>}
+          {product.isBio && <Badge className="bg-leaf-900 text-cream-50">{pl.product.bioBadge}</Badge>}
           {product.chemotyp && (
             <Badge variant="secondary" className="bg-leaf-100 text-leaf-900">
               ct. {product.chemotyp.split("/")[0].trim()}
