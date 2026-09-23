@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { Plus } from "lucide-react";
 import { pl, t } from "@/i18n/pl";
 import { filterLabels, filterOptions, needs, needTitle } from "@/lib/navigation";
 import type { SearchParams } from "@/lib/plp";
 import { collectionPageSchema, itemListSchema } from "@/lib/seo/schema";
 import type { Collection, CollectionFilters, CollectionProductsResult, SortKey } from "@/lib/shopify/types";
+import { cn } from "@/lib/utils";
 import { FaqAccordion } from "@/components/content/FaqAccordion";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -44,36 +46,37 @@ export function CollectionView({ collection, result, path, params, sort, filters
 
       <div className="grid gap-8 lg:grid-cols-[240px_1fr]">
         <aside>
-          {/* Mobile : <details> "Filtruj" ; desktop : sidebar ouverte */}
-          <details className="group rounded-md border border-sand-200 bg-card lg:open lg:border-0 lg:bg-transparent" open={hasFilters}>
-            <summary className="cursor-pointer list-none px-4 py-3 font-medium lg:hidden [&::-webkit-details-marker]:hidden">
-              {pl.collection.filter} {hasFilters ? "•" : ""}
+          {/*
+            Mobile : panneau repliable. Desktop : sidebar toujours visible.
+            Deux rendus distincts et non un seul <details> : le contenu d'un
+            <details> ferme est masque par le navigateur, aucune classe CSS ne
+            peut le reafficher de maniere fiable.
+          */}
+          <details className="group rounded-md border border-sand-200 bg-card lg:hidden" open={hasFilters}>
+            <summary className="flex cursor-pointer list-none items-center justify-between px-4 py-3 font-medium [&::-webkit-details-marker]:hidden">
+              <span>
+                {pl.collection.filter} {hasFilters ? "•" : ""}
+              </span>
+              <Plus className="size-4 shrink-0 transition-transform group-open:rotate-45" aria-hidden />
             </summary>
-            <form method="get" action={path} className="space-y-5 px-4 pb-4 lg:px-0">
-              <input type="hidden" name="sort" value={sort} />
-              <label className="flex items-center gap-2 text-sm">
-                <input type="checkbox" name="bio" value="1" defaultChecked={filters.bio} className="size-4 accent-leaf-700" />
-                {pl.collection.filters.bio}
-              </label>
-              {!hideNeedFilter && (
-                <FilterGroup name="potrzeba" label={pl.collection.filters.need} values={[...needs]} selected={filters.potrzeba ?? []} labelFor={needTitle} />
-              )}
-              <FilterGroup name="zapach" label={pl.collection.filters.scent} values={[...filterOptions.zapach]} selected={filters.zapach ?? []} labelFor={(v) => filterLabels[v] ?? v} />
-              <FilterGroup name="uzycie" label={pl.collection.filters.usage} values={[...filterOptions.uzycie]} selected={filters.uzycie ?? []} labelFor={(v) => filterLabels[v] ?? v} />
-              <FilterGroup name="bezpieczny" label={pl.collection.filters.safety} values={[...filterOptions.bezpieczny]} selected={filters.bezpieczny ?? []} labelFor={(v) => filterLabels[v] ?? v} />
-              <FilterGroup name="ml" label={pl.product.variantLabel} values={filterOptions.ml.map(String)} selected={(filters.ml ?? []).map(String)} labelFor={(v) => `${v} ml`} />
-              <div className="flex gap-2">
-                <button type="submit" className="h-10 flex-1 rounded-lg bg-leaf-900 px-4 text-sm font-medium text-cream-50 hover:bg-leaf-700">
-                  {pl.collection.filter}
-                </button>
-                {hasFilters && (
-                  <Link href={path} className="flex h-10 items-center rounded-lg border border-sand-200 px-3 text-sm hover:bg-leaf-100">
-                    {pl.collection.clearFilters}
-                  </Link>
-                )}
-              </div>
-            </form>
+            <FiltersForm
+              path={path}
+              sort={sort}
+              filters={filters}
+              hasFilters={hasFilters}
+              hideNeedFilter={hideNeedFilter}
+              className="px-4 pb-4"
+            />
           </details>
+          <div className="hidden lg:block">
+            <FiltersForm
+              path={path}
+              sort={sort}
+              filters={filters}
+              hasFilters={hasFilters}
+              hideNeedFilter={hideNeedFilter}
+            />
+          </div>
         </aside>
 
         <div>
@@ -101,6 +104,54 @@ export function CollectionView({ collection, result, path, params, sort, filters
   );
 }
 
+/** Formulaire de filtres, rendu deux fois : panneau mobile et sidebar desktop. */
+function FiltersForm({
+  path,
+  sort,
+  filters,
+  hasFilters,
+  hideNeedFilter,
+  className,
+}: {
+  path: string;
+  sort: SortKey;
+  filters: CollectionFilters;
+  hasFilters: boolean;
+  hideNeedFilter?: boolean;
+  className?: string;
+}) {
+  return (
+    <form method="get" action={path} className={cn("divide-y divide-sand-200", className)}>
+      <input type="hidden" name="sort" value={sort} />
+      <label className="flex items-center gap-2 py-3 text-sm font-medium">
+        <input type="checkbox" name="bio" value="1" defaultChecked={filters.bio} className="size-4 accent-leaf-700" />
+        {pl.collection.filters.bio}
+      </label>
+      {!hideNeedFilter && (
+        <FilterGroup name="potrzeba" label={pl.collection.filters.need} values={[...needs]} selected={filters.potrzeba ?? []} labelFor={needTitle} />
+      )}
+      <FilterGroup name="zapach" label={pl.collection.filters.scent} values={[...filterOptions.zapach]} selected={filters.zapach ?? []} labelFor={(v) => filterLabels[v] ?? v} />
+      <FilterGroup name="uzycie" label={pl.collection.filters.usage} values={[...filterOptions.uzycie]} selected={filters.uzycie ?? []} labelFor={(v) => filterLabels[v] ?? v} />
+      <FilterGroup name="bezpieczny" label={pl.collection.filters.safety} values={[...filterOptions.bezpieczny]} selected={filters.bezpieczny ?? []} labelFor={(v) => filterLabels[v] ?? v} />
+      <FilterGroup name="ml" label={pl.product.variantLabel} values={filterOptions.ml.map(String)} selected={(filters.ml ?? []).map(String)} labelFor={(v) => `${v} ml`} />
+      <div className="flex gap-2 pt-4">
+        <button type="submit" className="h-10 flex-1 rounded-lg bg-leaf-900 px-4 text-sm font-medium text-cream-50 hover:bg-leaf-700">
+          {pl.collection.filter}
+        </button>
+        {hasFilters && (
+          <Link href={path} className="flex h-10 items-center rounded-lg border border-sand-200 px-3 text-sm hover:bg-leaf-100">
+            {pl.collection.clearFilters}
+          </Link>
+        )}
+      </div>
+    </form>
+  );
+}
+
+/**
+ * Un groupe = un accordeon. Ouvert d'office quand il porte une selection,
+ * pour que le client voie tout de suite ce qui filtre sa liste.
+ */
 function FilterGroup({
   name,
   label,
@@ -115,9 +166,15 @@ function FilterGroup({
   labelFor: (v: string) => string;
 }) {
   return (
-    <fieldset>
-      <legend className="mb-2 text-xs font-semibold uppercase tracking-wide text-ink-600">{label}</legend>
-      <div className="space-y-1.5">
+    <details className="group/acc py-1" open={selected.length > 0}>
+      <summary className="flex cursor-pointer list-none items-center justify-between py-3 text-sm font-semibold text-leaf-900 [&::-webkit-details-marker]:hidden">
+        <span>
+          {label}
+          {selected.length > 0 && <span className="ml-1 font-normal text-ink-600">({selected.length})</span>}
+        </span>
+        <Plus className="size-4 shrink-0 text-ink-600 transition-transform group-open/acc:rotate-45" aria-hidden />
+      </summary>
+      <div className="space-y-1.5 pb-3">
         {values.map((v) => (
           <label key={v} className="flex items-center gap-2 text-sm">
             <input type="checkbox" name={name} value={v} defaultChecked={selected.includes(v)} className="size-4 accent-leaf-700" />
@@ -125,7 +182,7 @@ function FilterGroup({
           </label>
         ))}
       </div>
-    </fieldset>
+    </details>
   );
 }
 
