@@ -34,6 +34,9 @@ export function ProductCard({ product, priority = false, className }: Props) {
           priority={priority}
           className="transition-transform duration-300 group-hover:scale-[1.03]"
         />
+        {product.onPromo && (
+          <Badge className="absolute right-2 top-2 bg-red-600 text-white">{pl.product.promoBadge}</Badge>
+        )}
         <div className="absolute left-2 top-2 flex gap-1">
           {product.isBio && <Badge className="bg-amber-500 text-white">{pl.product.bioBadge}</Badge>}
           {product.chemotyp && (

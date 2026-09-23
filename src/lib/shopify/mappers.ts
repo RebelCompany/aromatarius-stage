@@ -37,6 +37,7 @@ export type RawProductCard = {
   updatedAt: string;
   featuredImage: RawImage;
   priceRange: { minVariantPrice: RawMoney; maxVariantPrice: RawMoney };
+  compareAtPriceRange?: { maxVariantPrice: RawMoney };
   variants: { nodes: { id: string }[] };
   nazwaLacinska: { value: string } | null;
   chemotyp: { value: string } | null;
@@ -287,6 +288,8 @@ export function mapProductCard(raw: RawProductCard): ProductCardData {
     chemotyp: raw.chemotyp?.value ?? null,
     defaultVariantId: raw.variants.nodes[0]?.id ?? "",
     rating: null,
+    // Shopify renvoie 0 quand aucune variante n'a de prix barre.
+    onPromo: toMoney(raw.compareAtPriceRange?.maxVariantPrice).amount > toMoney(raw.priceRange.minVariantPrice).amount,
   };
 }
 
@@ -346,6 +349,7 @@ export function productToCard(p: Product): ProductCardData {
     chemotyp: p.meta.chemotyp,
     defaultVariantId: p.variants[0]?.id ?? "",
     rating: null,
+    onPromo: p.variants.some((v) => v.compareAtPrice !== null && v.compareAtPrice.amount > v.price.amount),
   };
 }
 

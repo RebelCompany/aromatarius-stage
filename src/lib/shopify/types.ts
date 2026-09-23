@@ -107,6 +107,8 @@ export type ProductCardData = Pick<
   chemotyp: string | null;
   defaultVariantId: string;
   rating: { value: number; count: number } | null;
+  /** Au moins une variante a un prix barre : le produit est dans la collection promocje. */
+  onPromo: boolean;
 };
 
 export type CollectionMeta = {
