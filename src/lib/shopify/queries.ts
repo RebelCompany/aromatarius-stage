@@ -68,9 +68,16 @@ export const PRODUCT_CARD_FRAGMENT = /* GraphQL */ `
     compareAtPriceRange {
       maxVariantPrice { ...MoneyFields }
     }
-    variants(first: 1) { nodes { id } }
+    variants(first: 10) {
+      nodes {
+        id
+        price { ...MoneyFields }
+        compareAtPrice { ...MoneyFields }
+      }
+    }
     nazwaLacinska: metafield(namespace: "aromatarius", key: "nazwa_lacinska") { value }
     chemotyp: metafield(namespace: "aromatarius", key: "chemotyp") { value }
+    najnizszaCena30: metafield(namespace: "aromatarius", key: "najnizsza_cena_30") { value }
   }
 `;
 

@@ -38,9 +38,10 @@ export type RawProductCard = {
   featuredImage: RawImage;
   priceRange: { minVariantPrice: RawMoney; maxVariantPrice: RawMoney };
   compareAtPriceRange?: { maxVariantPrice: RawMoney };
-  variants: { nodes: { id: string }[] };
+  variants: { nodes: { id: string; price?: RawMoney; compareAtPrice?: RawMoney | null }[] };
   nazwaLacinska: { value: string } | null;
   chemotyp: { value: string } | null;
+  najnizszaCena30?: { value: string } | null;
 };
 
 export type RawProduct = Omit<RawProductCard, "variants" | "nazwaLacinska" | "chemotyp"> & {
@@ -290,6 +291,13 @@ export function mapProductCard(raw: RawProductCard): ProductCardData {
     rating: null,
     // Shopify renvoie 0 quand aucune variante n'a de prix barre.
     onPromo: toMoney(raw.compareAtPriceRange?.maxVariantPrice).amount > toMoney(raw.priceRange.minVariantPrice).amount,
+    compareAtPrice: cheapestCompareAt(
+      raw.variants.nodes.map((v) => ({
+        price: toMoney(v.price),
+        compareAtPrice: v.compareAtPrice ? toMoney(v.compareAtPrice) : null,
+      })),
+    ),
+    lowestPrice30: parseMoneyMetafield(raw.najnizszaCena30?.value),
   };
 }
 
@@ -334,6 +342,25 @@ export function mapProduct(raw: RawProduct): Product {
   };
 }
 
+/**
+ * La carte affiche le prix de la variante la moins chere : le prix barre doit
+ * etre celui de cette meme variante, sinon on afficherait une remise qui ne
+ * correspond a rien. Renvoie null si cette variante n'est pas soldee.
+ */
+function cheapestCompareAt(variants: { price: Money; compareAtPrice: Money | null }[]): Money | null {
+  const cheapest = variants.reduce<{ price: Money; compareAtPrice: Money | null } | null>(
+    (best, v) => (best === null || v.price.amount < best.price.amount ? v : best),
+    null,
+  );
+  if (!cheapest?.compareAtPrice) return null;
+  return cheapest.compareAtPrice.amount > cheapest.price.amount ? cheapest.compareAtPrice : null;
+}
+
+function parseMoneyMetafield(value: string | null | undefined): Money | null {
+  const parsed = parseJson<{ amount: string } | null>(value, null);
+  return parsed ? { amount: Number(parsed.amount), currencyCode: "PLN" } : null;
+}
+
 export function productToCard(p: Product): ProductCardData {
   return {
     id: p.id,
@@ -350,6 +377,8 @@ export function productToCard(p: Product): ProductCardData {
     defaultVariantId: p.variants[0]?.id ?? "",
     rating: null,
     onPromo: p.variants.some((v) => v.compareAtPrice !== null && v.compareAtPrice.amount > v.price.amount),
+    compareAtPrice: cheapestCompareAt(p.variants),
+    lowestPrice30: p.meta.najnizszaCena30,
   };
 }
 
