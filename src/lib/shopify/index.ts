@@ -147,6 +147,45 @@ export async function removeCartLine(lineId: string): Promise<Cart | null> {
   return cart;
 }
 
+/**
+ * Ajoute un code promo au panier. Shopify (ou la table de demo) decide seul de
+ * sa validite : un code refuse revient dans cart.discountCodes en applicable=false,
+ * on le retire alors pour ne pas le trainer jusqu'au checkout.
+ */
+export async function applyDiscountCode(code: string): Promise<{ cart: Cart; applied: boolean } | null> {
+  const id = await readCartId();
+  if (!id) return null;
+  const normalized = code.trim().toUpperCase();
+  if (!normalized) return null;
+  const p = await provider();
+  const current = (await p.getCart(id))?.discountCodes.map((d) => d.code) ?? [];
+  if (current.includes(normalized)) {
+    const cart = await p.getCart(id);
+    return cart ? { cart, applied: true } : null;
+  }
+  const cart = await p.updateCartDiscountCodes(id, [...current, normalized]);
+  if (cart.id !== id) await writeCartId(cart.id);
+  const applied = cart.discountCodes.some((d) => d.code === normalized && d.applicable);
+  if (applied) return { cart, applied: true };
+  // Code refuse : on remet la liste precedente pour laisser le panier propre.
+  const reverted = await p.updateCartDiscountCodes(cart.id, current);
+  if (reverted.id !== cart.id) await writeCartId(reverted.id);
+  return { cart: reverted, applied: false };
+}
+
+/** Retire un code promo. Sans argument, retire tous les codes. */
+export async function removeDiscountCode(code?: string): Promise<Cart | null> {
+  const id = await readCartId();
+  if (!id) return null;
+  const p = await provider();
+  const current = (await p.getCart(id))?.discountCodes.map((d) => d.code) ?? [];
+  const normalized = code?.trim().toUpperCase();
+  const next = normalized ? current.filter((c) => c !== normalized) : [];
+  const cart = await p.updateCartDiscountCodes(id, next);
+  if (cart.id !== id) await writeCartId(cart.id);
+  return cart;
+}
+
 export async function getCheckoutUrl(): Promise<string | null> {
   const cart = await getCart();
   return cart?.checkoutUrl ?? null;

@@ -244,4 +244,16 @@ export const storefrontProvider: ShopifyProvider = {
     assertNoUserErrors(data.cartLinesRemove.userErrors, "cartLinesRemove");
     return withCheckoutDomain(mapCart(data.cartLinesRemove.cart));
   },
+
+  async updateCartDiscountCodes(cartId, codes) {
+    const data = await storefront<{ cartDiscountCodesUpdate: { cart: RawCart; userErrors: { message: string }[] } }>(
+      q.CART_DISCOUNT_CODES_UPDATE_MUTATION,
+      { cartId, discountCodes: codes },
+      { cache: false },
+    );
+    // Un code inconnu ne remonte pas en userErrors : Shopify le renvoie dans
+    // cart.discountCodes avec applicable=false. C'est l'appelant qui tranche.
+    assertNoUserErrors(data.cartDiscountCodesUpdate.userErrors, "cartDiscountCodesUpdate");
+    return withCheckoutDomain(mapCart(data.cartDiscountCodesUpdate.cart));
+  },
 };

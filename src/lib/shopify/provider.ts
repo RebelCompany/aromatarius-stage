@@ -35,4 +35,6 @@ export interface ShopifyProvider {
   addCartLines(cartId: string, lines: { merchandiseId: string; quantity: number }[]): Promise<Cart>;
   updateCartLines(cartId: string, lines: { id: string; quantity: number }[]): Promise<Cart>;
   removeCartLines(cartId: string, lineIds: string[]): Promise<Cart>;
+  /** Remplace la liste des codes promo du panier (liste vide = tout retirer). */
+  updateCartDiscountCodes(cartId: string, codes: string[]): Promise<Cart>;
 }

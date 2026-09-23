@@ -86,6 +86,7 @@ export type RawCart = {
   id: string;
   checkoutUrl: string;
   totalQuantity: number;
+  discountCodes?: { code: string; applicable: boolean }[];
   cost: { subtotalAmount: RawMoney; totalAmount: RawMoney };
   lines: {
     nodes: {
@@ -389,11 +390,18 @@ export function mapCart(raw: RawCart): Cart {
       cost: { total: toMoney(l.cost.totalAmount) },
     };
   });
+  const subtotal = toMoney(raw.cost.subtotalAmount);
+  const total = toMoney(raw.cost.totalAmount);
+  // Shopify applique la remise sur totalAmount : l'ecart avec le sous-total la donne.
+  // Le total inclut parfois la livraison, d'ou le garde-fou a 0.
+  const discountTotal = Math.max(0, subtotal.amount - total.amount);
   return {
     id: raw.id,
     checkoutUrl: raw.checkoutUrl,
     totalQuantity: raw.totalQuantity,
     lines,
-    cost: { subtotal: toMoney(raw.cost.subtotalAmount), total: toMoney(raw.cost.totalAmount) },
+    discountCodes: raw.discountCodes ?? [],
+    discountTotal: { amount: discountTotal, currencyCode: "PLN" },
+    cost: { subtotal, total },
   };
 }

@@ -153,6 +153,10 @@ export const CART_FRAGMENT = /* GraphQL */ `
     id
     checkoutUrl
     totalQuantity
+    discountCodes {
+      code
+      applicable
+    }
     cost {
       subtotalAmount { ...MoneyFields }
       totalAmount { ...MoneyFields }
@@ -328,6 +332,18 @@ export const CART_LINES_UPDATE_MUTATION = /* GraphQL */ `
     cartLinesUpdate(cartId: $cartId, lines: $lines) {
       cart { ...CartFields }
       userErrors { field message }
+    }
+  }
+`;
+
+export const CART_DISCOUNT_CODES_UPDATE_MUTATION = /* GraphQL */ `
+  ${IMAGE_FRAGMENT}
+  ${MONEY_FRAGMENT}
+  ${CART_FRAGMENT}
+  mutation CartDiscountCodesUpdate($cartId: ID!, $discountCodes: [String!]) {
+    cartDiscountCodesUpdate(cartId: $cartId, discountCodes: $discountCodes) {
+      cart { ...CartFields }
+      userErrors { message }
     }
   }
 `;
