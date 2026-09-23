@@ -112,6 +112,7 @@ export const pl = {
     chemotype: "Chemotyp",
     bioCert: "Certyfikat BIO",
     bioBadge: "BIO",
+    promoBadge: "Promocja",
     analysisBadge: "Analiza partii",
     dosageMethod: "Metoda",
     dosageDose: "Dawka",

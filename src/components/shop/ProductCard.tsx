@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Star } from "lucide-react";
-import { pl } from "@/i18n/pl";
+import { pl, t } from "@/i18n/pl";
 import { formatMoney } from "@/lib/format";
 import type { ProductCardData } from "@/lib/shopify/types";
 import { cn } from "@/lib/utils";
@@ -34,8 +34,11 @@ export function ProductCard({ product, priority = false, className }: Props) {
           priority={priority}
           className="transition-transform duration-300 group-hover:scale-[1.03]"
         />
+        {product.onPromo && (
+          <Badge className="absolute right-2 top-2 bg-amber-500 text-ink-900">{pl.product.promoBadge}</Badge>
+        )}
         <div className="absolute left-2 top-2 flex gap-1">
-          {product.isBio && <Badge className="bg-amber-500 text-white">{pl.product.bioBadge}</Badge>}
+          {product.isBio && <Badge className="bg-leaf-900 text-cream-50">{pl.product.bioBadge}</Badge>}
           {product.chemotyp && (
             <Badge variant="secondary" className="bg-leaf-100 text-leaf-900">
               ct. {product.chemotyp.split("/")[0].trim()}
@@ -51,9 +54,12 @@ export function ProductCard({ product, priority = false, className }: Props) {
         </h3>
         {product.nazwaLacinska && <p className="latin text-sm">{product.nazwaLacinska}</p>}
         <div className="mt-auto flex items-end justify-between gap-2 pt-2">
-          <p className="text-base font-semibold text-ink-900">
+          <p className={cn("text-base font-semibold", product.compareAtPrice ? "text-amber-500" : "text-ink-900")}>
             {hasRange && <span className="mr-1 text-sm font-normal text-ink-600">{pl.product.from}</span>}
             {formatMoney(product.priceRange.min)}
+            {product.compareAtPrice && (
+              <s className="ml-2 text-sm font-normal text-ink-600">{formatMoney(product.compareAtPrice)}</s>
+            )}
           </p>
           {product.rating && (
             <p className="flex items-center gap-1 text-sm text-ink-600">
@@ -62,6 +68,9 @@ export function ProductCard({ product, priority = false, className }: Props) {
             </p>
           )}
         </div>
+        {product.compareAtPrice && product.lowestPrice30 && (
+          <p className="text-xs text-ink-600">{t(pl.product.lowestPrice30, { amount: formatMoney(product.lowestPrice30) })}</p>
+        )}
         {!product.availableForSale && <p className="text-xs text-ink-600">{pl.product.outOfStock}</p>}
       </div>
       {product.availableForSale && product.defaultVariantId && (

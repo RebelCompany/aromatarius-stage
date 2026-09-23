@@ -107,6 +107,12 @@ export type ProductCardData = Pick<
   chemotyp: string | null;
   defaultVariantId: string;
   rating: { value: number; count: number } | null;
+  /** Au moins une variante a un prix barre : le produit est dans la collection promocje. */
+  onPromo: boolean;
+  /** Prix barre de la variante la moins chere, celle dont le prix est affiche. */
+  compareAtPrice: Money | null;
+  /** Omnibus : plus bas prix des 30 jours precedant la baisse (docs/06). */
+  lowestPrice30: Money | null;
 };
 
 export type CollectionMeta = {
