@@ -27,6 +27,15 @@ type Props = {
 /** Page collection (PLP) : H1 + intro, filtres, grille, pagination, texte SEO, FAQ (docs/05). */
 export function CollectionView({ collection, result, path, params, sort, filters, hasFilters, hideNeedFilter }: Props) {
   const { products, total, page, totalPages } = result;
+  // hasFilters vaut aussi vrai sur un simple changement de tri : ce compteur
+  // ne retient que les filtres reellement coches.
+  const activeCount =
+    (filters.bio ? 1 : 0) +
+    (filters.potrzeba?.length ?? 0) +
+    (filters.zapach?.length ?? 0) +
+    (filters.uzycie?.length ?? 0) +
+    (filters.bezpieczny?.length ?? 0) +
+    (filters.ml?.length ?? 0);
   return (
     <div className="container-page py-6 md:py-10">
       <JsonLd
@@ -52,10 +61,20 @@ export function CollectionView({ collection, result, path, params, sort, filters
             <details> ferme est masque par le navigateur, aucune classe CSS ne
             peut le reafficher de maniere fiable.
           */}
-          <details className="group rounded-md border border-sand-200 bg-card lg:hidden" open={hasFilters}>
+          {/*
+            Volontairement sans "open" : apres filtrage le panneau se replie, sinon
+            il occupe tout l'ecran et repousse les resultats hors de vue. Le nombre
+            de filtres actifs reste lisible sur le resume.
+          */}
+          <details className="group rounded-md border border-sand-200 bg-card lg:hidden">
             <summary className="flex cursor-pointer list-none items-center justify-between px-4 py-3 font-medium [&::-webkit-details-marker]:hidden">
-              <span>
-                {pl.collection.filter} {hasFilters ? "•" : ""}
+              <span className="flex items-center gap-2">
+                {pl.collection.filter}
+                {activeCount > 0 && (
+                  <span className="inline-flex size-5 items-center justify-center rounded-full bg-leaf-900 text-xs text-cream-50">
+                    {activeCount}
+                  </span>
+                )}
               </span>
               <Plus className="size-4 shrink-0 transition-transform group-open:rotate-45" aria-hidden />
             </summary>
