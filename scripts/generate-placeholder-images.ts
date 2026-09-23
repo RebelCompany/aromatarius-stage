@@ -7,20 +7,20 @@ import fs from "node:fs";
 import path from "node:path";
 
 const products: Record<string, { color: string; label: string }> = {
-  "lawenda-bio": { color: "#7c6fb0", label: "Lawenda" },
+  "lawenda-waskolistna-bio": { color: "#7c6fb0", label: "Lawenda" },
   "bergamotka-bio": { color: "#b8c74a", label: "Bergamotka" },
   "mieta-pieprzowa-bio": { color: "#3aa07a", label: "Mięta" },
-  "drzewo-herbaciane-bio": { color: "#5b8a3c", label: "Tea tree" },
-  "eukaliptus-bio": { color: "#4f9c9c", label: "Eukaliptus" },
+  "tea-tree-drzewo-herbaciane-bio": { color: "#5b8a3c", label: "Tea tree" },
+  "eukaliptus-galkowy-bio": { color: "#4f9c9c", label: "Eukaliptus" },
   "ravintsara-bio": { color: "#2e7d6b", label: "Ravintsara" },
   "cytryna-bio": { color: "#e0c53a", label: "Cytryna" },
-  "rozmaryn-cyneol-bio": { color: "#6f8f4f", label: "Rozmaryn" },
-  "geranium-bio": { color: "#c96b8a", label: "Geranium" },
+  "rozmaryn-ct-cyneol-bio": { color: "#6f8f4f", label: "Rozmaryn" },
+  "geranium-rosat-bio": { color: "#c96b8a", label: "Geranium" },
   "cedr-atlaski-bio": { color: "#8b5e3c", label: "Cedr" },
   "pomarancza-bio": { color: "#e8923a", label: "Pomarańcza" },
-  "hydrolat-rozany-bio": { color: "#e5a6b8", label: "Hydrolat" },
+  "hydrolat-roza-damascenska-bio": { color: "#e5a6b8", label: "Hydrolat" },
   "olej-jojoba-bio": { color: "#d9b463", label: "Jojoba" },
-  "olej-migdalowy-bio": { color: "#e4cf9a", label: "Migdał" },
+  "olej-ze-slodkich-migdalow-bio": { color: "#e4cf9a", label: "Migdał" },
 };
 
 function bottle(color: string, label: string): string {
