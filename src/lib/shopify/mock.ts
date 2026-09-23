@@ -53,7 +53,7 @@ type OilSeed = {
 
 const seeds: OilSeed[] = [
   {
-    handle: "lawenda-bio",
+    handle: "lawenda-waskolistna-bio",
     title: "Lawenda wąskolistna BIO",
     latin: "Lavandula angustifolia",
     family: "Lamiaceae (jasnotowate)",
@@ -87,7 +87,7 @@ const seeds: OilSeed[] = [
     ],
     receptury: ["na-sen", "na-stres"],
     kompendium: "lawenda",
-    pasujeDo: ["bergamotka-bio", "cedr-atlaski-bio", "olej-migdalowy-bio"],
+    pasujeDo: ["bergamotka-bio", "cedr-atlaski-bio", "olej-ze-slodkich-migdalow-bio"],
     batch: "LAV-04.26",
   },
   {
@@ -124,7 +124,7 @@ const seeds: OilSeed[] = [
     ],
     receptury: ["na-stres"],
     kompendium: "bergamotka",
-    pasujeDo: ["lawenda-bio", "geranium-bio"],
+    pasujeDo: ["lawenda-waskolistna-bio", "geranium-rosat-bio"],
     batch: "BERG-07.27",
   },
   {
@@ -157,11 +157,11 @@ const seeds: OilSeed[] = [
     faq: [],
     receptury: ["na-bol-glowy"],
     kompendium: "mieta-pieprzowa",
-    pasujeDo: ["eukaliptus-bio", "rozmaryn-cyneol-bio"],
+    pasujeDo: ["eukaliptus-galkowy-bio", "rozmaryn-ct-cyneol-bio"],
     batch: "MEN-02.26",
   },
   {
-    handle: "drzewo-herbaciane-bio",
+    handle: "tea-tree-drzewo-herbaciane-bio",
     title: "Drzewo herbaciane BIO",
     latin: "Melaleuca alternifolia",
     family: "Myrtaceae (mirtowate)",
@@ -189,11 +189,11 @@ const seeds: OilSeed[] = [
     bezpieczenstwo: "<ul><li>Może utleniać się z czasem: zużyć w 12 miesięcy od otwarcia.</li><li>U dzieci od 6 lat, tylko zewnętrznie.</li><li>Nie stosować doustnie.</li></ul>",
     receptury: ["na-tradzik"],
     kompendium: "drzewo-herbaciane",
-    pasujeDo: ["lawenda-bio", "olej-jojoba-bio"],
+    pasujeDo: ["lawenda-waskolistna-bio", "olej-jojoba-bio"],
     batch: "TTO-05.26",
   },
   {
-    handle: "eukaliptus-bio",
+    handle: "eukaliptus-galkowy-bio",
     title: "Eukaliptus gałkowy BIO",
     latin: "Eucalyptus globulus",
     family: "Myrtaceae (mirtowate)",
@@ -253,7 +253,7 @@ const seeds: OilSeed[] = [
     bezpieczenstwo: "<ul><li>U dzieci od 3 lat w dyfuzji, na skórę od 6 lat w 1 %.</li><li>W ciąży po 1. trymestrze, zewnętrznie.</li><li>Nie mylić z kamforą ani z ravensarą (<em>Ravensara aromatica</em>).</li></ul>",
     receptury: ["na-odpornosc", "na-katar"],
     kompendium: "ravintsara",
-    pasujeDo: ["cytryna-bio", "drzewo-herbaciane-bio", "eukaliptus-bio"],
+    pasujeDo: ["cytryna-bio", "tea-tree-drzewo-herbaciane-bio", "eukaliptus-galkowy-bio"],
     batch: "RAV-03.26",
   },
   {
@@ -286,11 +286,11 @@ const seeds: OilSeed[] = [
     bezpieczenstwo: "<ul><li><strong>Fototoksyczny</strong> na skórze.</li><li>Zużyć w 12 miesięcy od otwarcia.</li></ul>",
     receptury: ["na-odpornosc"],
     kompendium: "cytryna",
-    pasujeDo: ["ravintsara-bio", "drzewo-herbaciane-bio"],
+    pasujeDo: ["ravintsara-bio", "tea-tree-drzewo-herbaciane-bio"],
     batch: "CYT-06.26",
   },
   {
-    handle: "rozmaryn-cyneol-bio",
+    handle: "rozmaryn-ct-cyneol-bio",
     title: "Rozmaryn ct. cyneol BIO",
     latin: "Rosmarinus officinalis ct. 1,8-cineole",
     family: "Lamiaceae (jasnotowate)",
@@ -322,7 +322,7 @@ const seeds: OilSeed[] = [
     batch: "ROS-04.26",
   },
   {
-    handle: "geranium-bio",
+    handle: "geranium-rosat-bio",
     title: "Geranium (pelargonia) BIO",
     latin: "Pelargonium graveolens",
     family: "Geraniaceae (bodziszkowate)",
@@ -349,7 +349,7 @@ const seeds: OilSeed[] = [
     bezpieczenstwo: "<ul><li>Może uczulać osoby wrażliwe na geraniol: test na skórze.</li><li>W ciąży po 1. trymestrze.</li></ul>",
     receptury: ["na-stres"],
     kompendium: "geranium",
-    pasujeDo: ["bergamotka-bio", "lawenda-bio"],
+    pasujeDo: ["bergamotka-bio", "lawenda-waskolistna-bio"],
     batch: "GER-02.26",
   },
   {
@@ -380,7 +380,7 @@ const seeds: OilSeed[] = [
     bezpieczenstwo: "<ul><li>Nie stosować w ciąży.</li><li>Nie stosować doustnie.</li></ul>",
     receptury: ["na-sen"],
     kompendium: "cedr-atlaski",
-    pasujeDo: ["lawenda-bio", "pomarancza-bio"],
+    pasujeDo: ["lawenda-waskolistna-bio", "pomarancza-bio"],
     batch: "CED-11.25",
   },
   {
@@ -412,11 +412,11 @@ const seeds: OilSeed[] = [
     bezpieczenstwo: "<ul><li>Zużyć w 12 miesięcy od otwarcia (utlenianie).</li></ul>",
     receptury: ["na-sen"],
     kompendium: "pomarancza",
-    pasujeDo: ["cedr-atlaski-bio", "lawenda-bio"],
+    pasujeDo: ["cedr-atlaski-bio", "lawenda-waskolistna-bio"],
     batch: "POM-05.26",
   },
   {
-    handle: "hydrolat-rozany-bio",
+    handle: "hydrolat-roza-damascenska-bio",
     title: "Hydrolat różany BIO",
     latin: "Rosa damascena",
     type: "Hydrolat",
@@ -440,7 +440,7 @@ const seeds: OilSeed[] = [
     dawkowanie: [{ metoda: "Skóra", dawka: "bez rozcieńczania, jako tonik" }],
     bezpieczenstwo: "<ul><li>Bez konserwantów: zużyć w 6 miesięcy, trzymać w lodówce.</li></ul>",
     kompendium: null,
-    pasujeDo: ["geranium-bio", "olej-jojoba-bio"],
+    pasujeDo: ["geranium-rosat-bio", "olej-jojoba-bio"],
     batch: "HYD-ROSA-03.26",
   },
   {
@@ -465,11 +465,11 @@ const seeds: OilSeed[] = [
     dawkowanie: [{ metoda: "Skóra", dawka: "bez ograniczeń, baza" }],
     bezpieczenstwo: "<ul><li>Brak znanych przeciwwskazań.</li></ul>",
     kompendium: null,
-    pasujeDo: ["lawenda-bio", "drzewo-herbaciane-bio"],
+    pasujeDo: ["lawenda-waskolistna-bio", "tea-tree-drzewo-herbaciane-bio"],
     batch: "JOJ-01.26",
   },
   {
-    handle: "olej-migdalowy-bio",
+    handle: "olej-ze-slodkich-migdalow-bio",
     title: "Olej ze słodkich migdałów BIO",
     latin: "Prunus amygdalus dulcis",
     type: "Olej roślinny",
@@ -490,16 +490,16 @@ const seeds: OilSeed[] = [
     dawkowanie: [{ metoda: "Skóra", dawka: "bez ograniczeń, baza" }],
     bezpieczenstwo: "<ul><li>Uwaga przy alergii na orzechy.</li></ul>",
     kompendium: null,
-    pasujeDo: ["lawenda-bio"],
+    pasujeDo: ["lawenda-waskolistna-bio"],
     batch: "MIG-02.26",
   },
 ];
 
 // Prix des huiles végétales et hydrolats (100 ml)
 const bigFormats: Record<string, { ml: number; price: number }> = {
-  "hydrolat-rozany-bio": { ml: 100, price: 39 },
+  "hydrolat-roza-damascenska-bio": { ml: 100, price: 39 },
   "olej-jojoba-bio": { ml: 100, price: 49 },
-  "olej-migdalowy-bio": { ml: 100, price: 29 },
+  "olej-ze-slodkich-migdalow-bio": { ml: 100, price: 29 },
 };
 
 function buildProduct(seed: OilSeed, index: number): Product {
@@ -522,7 +522,7 @@ function buildProduct(seed: OilSeed, index: number): Product {
     id: `gid://shopify/ProductVariant/${1000 + index * 10 + i}`,
     title: `${e.ml} ml`,
     sku: `${seed.handle.toUpperCase().replace(/-/g, "")}-${e.ml}`,
-    availableForSale: !(seed.handle === "geranium-bio" && e.ml === 5),
+    availableForSale: !(seed.handle === "geranium-rosat-bio" && e.ml === 5),
     quantityAvailable: seed.handle === "cytryna-bio" && e.ml === 30 ? 2 : 40,
     price: pln(e.price),
     compareAtPrice: e.compareAt ? pln(e.compareAt) : null,
