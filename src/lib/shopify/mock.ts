@@ -696,16 +696,43 @@ function sortProducts(products: Product[], sort: SortKey): Product[] {
 type StoredLine = { id: string; merchandiseId: string; quantity: number };
 const MOCK_PREFIX = "mock:";
 
-function encodeLines(lines: StoredLine[]): string {
-  const compact = lines.map((l) => [l.id, l.merchandiseId.split("/").pop(), l.quantity]);
+/**
+ * Codes promo de demonstration. En mode demo il n'y a pas de Shopify pour
+ * valider quoi que ce soit : cette table remplace le back-office. Tout autre
+ * code est refuse. Des que le store est connecte, ce sont les regles Shopify
+ * qui s'appliquent et cette table n'est plus lue.
+ */
+const MOCK_DISCOUNTS: Record<string, number> = {
+  AROMA10: 0.1,
+  BOGUSIA20: 0.2,
+};
+
+type StoredCart = { lines: StoredLine[]; codes: string[] };
+
+function encodeCart(cart: StoredCart): string {
+  const compact = {
+    l: cart.lines.map((l) => [l.id, l.merchandiseId.split("/").pop(), l.quantity]),
+    d: cart.codes,
+  };
   return MOCK_PREFIX + Buffer.from(JSON.stringify(compact), "utf8").toString("base64url");
 }
 
-function decodeLines(cartId: string): StoredLine[] | null {
+function encodeLines(lines: StoredLine[]): string {
+  return encodeCart({ lines, codes: [] });
+}
+
+function decodeCart(cartId: string): StoredCart | null {
   if (!cartId.startsWith(MOCK_PREFIX)) return null;
   try {
-    const compact = JSON.parse(Buffer.from(cartId.slice(MOCK_PREFIX.length), "base64url").toString("utf8")) as [string, string, number][];
-    return compact.map(([id, variant, quantity]) => ({ id, merchandiseId: `gid://shopify/ProductVariant/${variant}`, quantity }));
+    const parsed = JSON.parse(Buffer.from(cartId.slice(MOCK_PREFIX.length), "base64url").toString("utf8")) as
+      | [string, string, number][]
+      | { l: [string, string, number][]; d?: string[] };
+    // Les cookies emis avant l'ajout des codes promo encodent un simple tableau.
+    const compact = Array.isArray(parsed) ? { l: parsed, d: [] } : parsed;
+    return {
+      lines: compact.l.map(([id, variant, quantity]) => ({ id, merchandiseId: `gid://shopify/ProductVariant/${variant}`, quantity })),
+      codes: compact.d ?? [],
+    };
   } catch {
     return null;
   }
@@ -719,7 +746,7 @@ function findVariant(merchandiseId: string): { product: Product; variant: Produc
   return null;
 }
 
-function materializeCart(storedLines: StoredLine[]): Cart {
+function materializeCart(storedLines: StoredLine[], codes: string[] = []): Cart {
   const lines: CartLine[] = storedLines
     .map((l) => {
       const found = findVariant(l.merchandiseId);
@@ -741,12 +768,17 @@ function materializeCart(storedLines: StoredLine[]): Cart {
     })
     .filter((l): l is CartLine => !!l);
   const subtotal = lines.reduce((s, l) => s + l.cost.total.amount, 0);
+  const rate = codes.filter((c) => c in MOCK_DISCOUNTS).reduce((r, c) => r + MOCK_DISCOUNTS[c], 0);
+  // Arrondi au grosz, et jamais plus que le sous-total.
+  const discountTotal = Math.min(subtotal, Math.round(subtotal * rate * 100) / 100);
   return {
-    id: encodeLines(storedLines),
+    id: encodeCart({ lines: storedLines, codes }),
     checkoutUrl: `/koszyk?checkout=mock`,
     totalQuantity: lines.reduce((s, l) => s + l.quantity, 0),
     lines,
-    cost: { subtotal: pln(subtotal), total: pln(subtotal) },
+    discountCodes: codes.map((code) => ({ code, applicable: code in MOCK_DISCOUNTS })),
+    discountTotal: pln(discountTotal),
+    cost: { subtotal: pln(subtotal), total: pln(subtotal - discountTotal) },
   };
 }
 
@@ -815,32 +847,38 @@ export const mockProvider: ShopifyProvider = {
     return this.addCartLines(encodeLines([]), lines);
   },
   async getCart(cartId) {
-    const stored = decodeLines(cartId);
-    return stored ? materializeCart(stored) : null;
+    const stored = decodeCart(cartId);
+    return stored ? materializeCart(stored.lines, stored.codes) : null;
   },
   async addCartLines(cartId, lines) {
-    const stored = decodeLines(cartId);
+    const stored = decodeCart(cartId);
     if (!stored) throw new Error("Cart not found");
     for (const l of lines) {
-      const existing = stored.find((x) => x.merchandiseId === l.merchandiseId);
+      const existing = stored.lines.find((x) => x.merchandiseId === l.merchandiseId);
       if (existing) existing.quantity += l.quantity;
-      else stored.push({ id: `l${Date.now().toString(36)}${stored.length}`, merchandiseId: l.merchandiseId, quantity: l.quantity });
+      else stored.lines.push({ id: `l${Date.now().toString(36)}${stored.lines.length}`, merchandiseId: l.merchandiseId, quantity: l.quantity });
     }
-    return materializeCart(stored);
+    return materializeCart(stored.lines, stored.codes);
   },
   async updateCartLines(cartId, lines) {
-    const stored = decodeLines(cartId);
+    const stored = decodeCart(cartId);
     if (!stored) throw new Error("Cart not found");
     for (const l of lines) {
-      const line = stored.find((x) => x.id === l.id);
+      const line = stored.lines.find((x) => x.id === l.id);
       if (line) line.quantity = l.quantity;
     }
-    return materializeCart(stored.filter((l) => l.quantity > 0));
+    return materializeCart(stored.lines.filter((l) => l.quantity > 0), stored.codes);
   },
   async removeCartLines(cartId, lineIds) {
-    const stored = decodeLines(cartId);
+    const stored = decodeCart(cartId);
     if (!stored) throw new Error("Cart not found");
-    return materializeCart(stored.filter((l) => !lineIds.includes(l.id)));
+    return materializeCart(stored.lines.filter((l) => !lineIds.includes(l.id)), stored.codes);
+  },
+  async updateCartDiscountCodes(cartId, codes) {
+    const stored = decodeCart(cartId);
+    if (!stored) throw new Error("Cart not found");
+    const normalized = codes.map((c) => c.trim().toUpperCase()).filter(Boolean);
+    return materializeCart(stored.lines, [...new Set(normalized)]);
   },
 };
 

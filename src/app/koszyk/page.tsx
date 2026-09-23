@@ -6,6 +6,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 import { getCart, getShopInfo, isMockMode } from "@/lib/shopify";
 import { FreeShippingBar } from "@/components/shop/FreeShippingBar";
 import { ProductImage } from "@/components/shop/ProductImage";
+import { PromoCode } from "@/components/shop/PromoCode";
 import { ButtonLink } from "@/components/ui/button-link";
 
 export const dynamic = "force-dynamic";
@@ -57,10 +58,24 @@ export default async function CartPage({ searchParams }: { searchParams: Promise
               </li>
             ))}
           </ul>
+          <PromoCode discountCodes={cart.discountCodes} />
+
           <div className="mt-6 flex items-center justify-between text-lg">
             <span>{pl.cart.subtotal}</span>
             <span className="font-semibold">{formatMoney(cart.cost.subtotal)}</span>
           </div>
+          {cart.discountTotal.amount > 0 && (
+            <div className="mt-2 flex items-center justify-between text-lg text-leaf-700">
+              <span>{pl.cart.promoDiscount}</span>
+              <span className="font-semibold">-{formatMoney(cart.discountTotal)}</span>
+            </div>
+          )}
+          {cart.discountTotal.amount > 0 && (
+            <div className="mt-2 flex items-center justify-between border-t border-sand-200 pt-2 text-lg">
+              <span>{pl.cart.total}</span>
+              <span className="font-semibold">{formatMoney(cart.cost.total)}</span>
+            </div>
+          )}
           <p className="mt-1 text-sm text-ink-600">{pl.cart.shippingNote}</p>
           <a
             href={cart.checkoutUrl}

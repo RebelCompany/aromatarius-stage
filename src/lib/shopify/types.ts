@@ -163,11 +163,16 @@ export type CartLine = {
   cost: { total: Money };
 };
 
+/** Code promo du panier. applicable=false : code refuse (inconnu, expire, conditions non remplies). */
+export type CartDiscountCode = { code: string; applicable: boolean };
 export type Cart = {
   id: string;
   checkoutUrl: string;
   totalQuantity: number;
   lines: CartLine[];
+  discountCodes: CartDiscountCode[];
+  /** Total des remises, toujours positif. 0 si aucun code actif. */
+  discountTotal: Money;
   cost: { subtotal: Money; total: Money };
 };
 
