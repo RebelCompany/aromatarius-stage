@@ -3,6 +3,7 @@ import { pl } from "@/i18n/pl";
 import { getKompendiumEntries } from "@/lib/content/loader";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { ContentCard } from "@/components/content/ContentCard";
+import { PageBanner } from "@/components/layout/PageBanner";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 
 export function generateMetadata(): Metadata {
@@ -18,9 +19,8 @@ export default async function KompendiumIndexPage() {
   return (
     <div className="container-page py-8 md:py-12">
       <Breadcrumbs items={[{ name: pl.nav.kompendium, href: "/kompendium" }]} className="mb-4" />
-      <h1>{pl.content.kompendiumTitle}</h1>
-      <p className="mt-3 max-w-prose text-lg text-ink-600">{pl.content.kompendiumIntro}</p>
-      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <PageBanner title={pl.content.kompendiumTitle} intro={pl.content.kompendiumIntro} />
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {entries.map((k) => (
           <ContentCard
             key={k.frontmatter.slug}

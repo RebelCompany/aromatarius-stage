@@ -5,6 +5,7 @@ import { getRecipes } from "@/lib/content/loader";
 import { needTitle } from "@/lib/navigation";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { ContentCard } from "@/components/content/ContentCard";
+import { PageBanner } from "@/components/layout/PageBanner";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 
 export function generateMetadata(): Metadata {
@@ -20,9 +21,8 @@ export default async function RecipesIndexPage() {
   return (
     <div className="container-page py-8 md:py-12">
       <Breadcrumbs items={[{ name: pl.nav.receptury, href: "/receptury" }]} className="mb-4" />
-      <h1>{pl.content.recepturyTitle}</h1>
-      <p className="mt-3 max-w-prose text-lg text-ink-600">{pl.content.recepturyIntro}</p>
-      <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <PageBanner title={pl.content.recepturyTitle} intro={pl.content.recepturyIntro} />
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {recipes.map((r) => (
           <ContentCard
             key={r.frontmatter.slug}
