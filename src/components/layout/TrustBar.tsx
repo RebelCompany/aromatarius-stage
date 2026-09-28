@@ -9,15 +9,21 @@ const items = [
   { icon: Truck, title: pl.trust.shipping, sub: pl.trust.shippingSub },
 ];
 
+/**
+ * Barre de reassurance : pastille ronde beige, icone centree, texte dessous.
+ * Le beige est le sand-200 du theme, la palette n'ayant pas de rose.
+ */
 export function TrustBar({ className }: { className?: string }) {
   return (
-    <ul className={cn("grid grid-cols-2 gap-3 md:grid-cols-4", className)}>
+    <ul className={cn("grid grid-cols-2 gap-x-4 gap-y-8 py-8 md:grid-cols-4 md:gap-x-6", className)}>
       {items.map(({ icon: Icon, title, sub }) => (
-        <li key={title} className="flex items-start gap-3 rounded-md border border-sand-200 bg-card p-3">
-          <Icon className="mt-0.5 size-5 shrink-0 text-leaf-500" aria-hidden />
+        <li key={title} className="flex flex-col items-center gap-3 px-2 text-center">
+          <span className="flex size-16 shrink-0 items-center justify-center rounded-full bg-sand-200" aria-hidden>
+            <Icon className="size-7 text-leaf-700" strokeWidth={1.5} />
+          </span>
           <div>
-            <p className="text-sm font-semibold text-ink-900">{title}</p>
-            <p className="text-xs text-ink-600">{sub}</p>
+            <p className="text-sm font-semibold text-leaf-900">{title}</p>
+            <p className="mt-0.5 text-xs text-ink-600">{sub}</p>
           </div>
         </li>
       ))}
