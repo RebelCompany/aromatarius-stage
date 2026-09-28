@@ -8,6 +8,7 @@ import type { Collection, CollectionFilters, CollectionProductsResult, SortKey }
 import { cn } from "@/lib/utils";
 import { FaqAccordion } from "@/components/content/FaqAccordion";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { CollectionBanner } from "./CollectionBanner";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ProductGrid } from "./ProductGrid";
 import { SortSelect } from "./SortSelect";
@@ -45,13 +46,7 @@ export function CollectionView({ collection, result, path, params, sort, filters
         ]}
       />
       <Breadcrumbs items={[{ name: collection.title, href: path }]} className="mb-4" />
-      <header className="mb-6 max-w-3xl">
-        <h1>{collection.title}</h1>
-        {collection.meta.introHtml && (
-          <div className="prose-aroma mt-3 text-ink-600" dangerouslySetInnerHTML={{ __html: collection.meta.introHtml }} />
-        )}
-        <p className="mt-2 text-sm text-ink-600">{t(pl.collection.productsCount, { count: total })}</p>
-      </header>
+      <CollectionBanner collection={collection} count={t(pl.collection.productsCount, { count: total })} />
 
       <div className="grid gap-8 lg:grid-cols-[240px_1fr]">
         <aside>
@@ -105,7 +100,7 @@ export function CollectionView({ collection, result, path, params, sort, filters
           {products.length === 0 ? (
             <p className="rounded-md border border-sand-200 bg-card p-8 text-center text-ink-600">{pl.collection.empty}</p>
           ) : (
-            <ProductGrid products={products} listName={`collection_${collection.handle}`} priorityCount={2} />
+            <ProductGrid products={products} listName={`collection_${collection.handle}`} priorityCount={0} />
           )}
           {totalPages > 1 && <Pagination path={path} params={params} page={page} totalPages={totalPages} />}
         </div>
