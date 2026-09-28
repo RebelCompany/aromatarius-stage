@@ -29,9 +29,9 @@ const menuItems: MegaMenuItem[] = [
 ];
 
 /**
- * Header : mobile et tablette (< lg) reprennent la maquette (logo, bouton Koszyk
- * en pilule, bouton rond menu) ; desktop (lg+) : méga-menu, Blog et Promocje en
- * premier niveau, recherche, compte, panier.
+ * Header : mobile et tablette (< lg) affichent le logo, l'icône panier et le
+ * bouton rond menu ; desktop (lg+) : méga-menu, Blog et Promocje en premier
+ * niveau, recherche, compte, panier.
  */
 export function Header() {
   return (
@@ -65,9 +65,9 @@ export function Header() {
           <CartButton />
         </div>
 
-        {/* Mobile et tablette : Koszyk en pilule + bouton menu rond (maquette) */}
-        <div className="ml-auto flex items-center gap-3 lg:hidden">
-          <CartButton variant="pill" />
+        {/* Mobile et tablette : icône panier + bouton menu rond */}
+        <div className="ml-auto flex items-center gap-1 lg:hidden">
+          <CartButton />
           <MobileNav />
         </div>
       </div>
