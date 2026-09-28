@@ -8,7 +8,7 @@ import type { Collection, CollectionFilters, CollectionProductsResult, SortKey }
 import { cn } from "@/lib/utils";
 import { FaqAccordion } from "@/components/content/FaqAccordion";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
-import { CollectionBanner } from "./CollectionBanner";
+import { PageBanner } from "@/components/layout/PageBanner";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ProductGrid } from "./ProductGrid";
 import { SortSelect } from "./SortSelect";
@@ -46,7 +46,12 @@ export function CollectionView({ collection, result, path, params, sort, filters
         ]}
       />
       <Breadcrumbs items={[{ name: collection.title, href: path }]} className="mb-4" />
-      <CollectionBanner collection={collection} count={t(pl.collection.productsCount, { count: total })} />
+      <PageBanner
+        title={collection.title}
+        introHtml={collection.meta.introHtml}
+        meta={t(pl.collection.productsCount, { count: total })}
+        image={collection.image}
+      />
 
       <div className="grid gap-8 lg:grid-cols-[240px_1fr]">
         <aside>

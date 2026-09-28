@@ -4,6 +4,7 @@ import { getBlogPosts } from "@/lib/content/loader";
 import { formatDate } from "@/lib/format";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { ContentCard } from "@/components/content/ContentCard";
+import { PageBanner } from "@/components/layout/PageBanner";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 
 export function generateMetadata(): Metadata {
@@ -15,9 +16,8 @@ export default async function BlogIndexPage() {
   return (
     <div className="container-page py-8 md:py-12">
       <Breadcrumbs items={[{ name: pl.nav.blog, href: "/blog" }]} className="mb-4" />
-      <h1>{pl.content.blogTitle}</h1>
-      <p className="mt-3 max-w-prose text-lg text-ink-600">{pl.content.blogIntro}</p>
-      <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <PageBanner title={pl.content.blogTitle} intro={pl.content.blogIntro} />
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {posts.map((p) => (
           <ContentCard
             key={p.frontmatter.slug}
