@@ -1,9 +1,13 @@
 import type {
+  AuthResult,
+  AuthorizationRequest,
   Cart,
   Collection,
   CollectionFilters,
   CollectionProductsResult,
   Metaobject,
+  Customer,
+  CustomerSession,
   Product,
   ProductCardData,
   SearchResult,
@@ -37,4 +41,20 @@ export interface ShopifyProvider {
   removeCartLines(cartId: string, lineIds: string[]): Promise<Cart>;
   /** Remplace la liste des codes promo du panier (liste vide = tout retirer). */
   updateCartDiscountCodes(cartId: string, codes: string[]): Promise<Cart>;
+
+  /**
+   * Rattache le panier au client, ou le detache avec null. C'est ce qui
+   * pre-remplit le checkout et lie la commande au compte (docs/03).
+   */
+  updateCartBuyerIdentity(cartId: string, customerAccessToken: string | null): Promise<Cart>;
+
+  /* ---- Compte client : OAuth Customer Account API ---- */
+
+  /** Prepare la redirection vers Shopify. state, nonce et verifieur a stocker. */
+  startAuthorization(redirectUri: string): Promise<AuthorizationRequest>;
+  /** Echange le code recu au retour contre une session. */
+  completeAuthorization(params: { code: string; redirectUri: string; codeVerifier: string }): Promise<AuthResult<CustomerSession>>;
+  /** URL de deconnexion Shopify, ou null si le flux ne l'exige pas (demo). */
+  buildLogoutUrl(idToken: string, postLogoutRedirectUri: string): Promise<string | null>;
+  getCustomer(accessToken: string): Promise<Customer | null>;
 }

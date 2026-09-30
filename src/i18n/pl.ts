@@ -182,6 +182,7 @@ export const pl = {
     close: "Zamknij koszyk",
     open: "Otwórz koszyk",
     itemsInCart: "{count} w koszyku",
+    loginHint: "i przejdź do kasy z wypełnionymi danymi.",
   },
   search: {
     title: "Szukaj",
@@ -321,7 +322,25 @@ export const pl = {
   account: {
     title: "Konto",
     login: "Zaloguj się",
-    comingSoon: "Logowanie kodem e-mail będzie dostępne przy starcie sklepu.",
+    comingSoon: "Historia zamówień będzie dostępna przy starcie sklepu.",
+    loginTitle: "Zaloguj się",
+    loginIntro: "Bez hasła: wpisz e-mail, a wyślemy Ci jednorazowy kod.",
+    loginCta: "Zaloguj się przez e-mail",
+    email: "E-mail",
+    logout: "Wyloguj się",
+    myAccount: "Moje konto",
+    greeting: "Cześć, {name}",
+    loggedInAs: "Zalogowano jako {email}",
+    demoTitle: "Logowanie (tryb demo)",
+    demoIntro: "Wpisz dowolny e-mail, aby zobaczyć widok zalogowanego klienta.",
+    demoNotice: "Tryb demo: sklep Shopify nie jest podłączony, więc kod nie jest wysyłany.",
+    errors: {
+      ACCESS_DENIED: "Logowanie zostało przerwane.",
+      STATE_MISMATCH: "Sesja logowania wygasła. Spróbuj ponownie.",
+      EXCHANGE_FAILED: "Nie udało się dokończyć logowania. Spróbuj ponownie.",
+      SESSION_EXPIRED: "Twoja sesja wygasła. Zaloguj się ponownie.",
+      UNKNOWN: "Coś poszło nie tak. Spróbuj ponownie.",
+    },
   },
 } as const;
 

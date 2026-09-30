@@ -6,10 +6,13 @@
 import { emptyMeta, productToCard } from "./mappers";
 import type { ShopifyProvider } from "./provider";
 import type {
+  AuthResult,
   Cart,
   CartLine,
   Collection,
   CollectionFilters,
+  Customer,
+  CustomerSession,
   Money,
   Product,
   ProductCardData,
@@ -782,6 +785,42 @@ function materializeCart(storedLines: StoredLine[], codes: string[] = []): Cart 
   };
 }
 
+const MOCK_TOKEN_PREFIX = "mockcust:";
+const normalizeEmail = (email: string) => email.trim().toLowerCase();
+
+/**
+ * Simulation du flux OAuth sans store Shopify. L'ecran de saisie hebergé par
+ * Shopify est remplace par la page locale /konto/demo, qui redirige vers le
+ * meme callback avec un code encodant l'e-mail. La forme du parcours est
+ * identique, seule la partie hebergee par Shopify est remplacee.
+ */
+const MOCK_CODE_PREFIX = "mockcode:";
+
+export function encodeMockCode(email: string): string {
+  return MOCK_CODE_PREFIX + Buffer.from(normalizeEmail(email), "utf8").toString("base64url");
+}
+
+function decodeMockCode(code: string): string | null {
+  if (!code.startsWith(MOCK_CODE_PREFIX)) return null;
+  try {
+    return Buffer.from(code.slice(MOCK_CODE_PREFIX.length), "base64url").toString("utf8") || null;
+  } catch {
+    return null;
+  }
+}
+
+/** Prenom devine depuis l'e-mail, faute d'annuaire en mode demo. */
+function mockCustomerFor(email: string): Customer {
+  const local = email.split("@")[0] ?? "";
+  const first = local.split(/[._-]/)[0] ?? local;
+  return {
+    id: `gid://shopify/Customer/${Buffer.from(email, "utf8").toString("base64url").slice(0, 12)}`,
+    firstName: first ? first.charAt(0).toUpperCase() + first.slice(1) : null,
+    lastName: null,
+    email,
+  };
+}
+
 export const mockProvider: ShopifyProvider = {
   async getProduct(handle) {
     return mockProducts.find((p) => p.handle === handle) ?? null;
@@ -879,6 +918,51 @@ export const mockProvider: ShopifyProvider = {
     if (!stored) throw new Error("Cart not found");
     const normalized = codes.map((c) => c.trim().toUpperCase()).filter(Boolean);
     return materializeCart(stored.lines, [...new Set(normalized)]);
+  },
+
+  async updateCartBuyerIdentity(cartId) {
+    // Sans Shopify il n'y a pas de checkout a pre-remplir : le panier est rendu tel quel.
+    const stored = decodeCart(cartId);
+    if (!stored) throw new Error("Cart not found");
+    return materializeCart(stored.lines, stored.codes);
+  },
+
+  /* ---- Compte client : OAuth simule ---- */
+
+  async startAuthorization(redirectUri) {
+    const state = Math.random().toString(36).slice(2);
+    const url = `/konto/demo?powrot=${encodeURIComponent(redirectUri)}&state=${encodeURIComponent(state)}`;
+    return { url, state, nonce: state, codeVerifier: state };
+  },
+
+  async completeAuthorization({ code }): Promise<AuthResult<CustomerSession>> {
+    const email = decodeMockCode(code);
+    if (!email) return { ok: false, code: "EXCHANGE_FAILED" };
+    const token = `${MOCK_TOKEN_PREFIX}${Buffer.from(email, "utf8").toString("base64url")}`;
+    return {
+      ok: true,
+      data: {
+        accessToken: token,
+        idToken: token,
+        refreshToken: null,
+        expiresAt: new Date(Date.now() + 1000 * 60 * 60 * 24 * 14).toISOString(),
+      },
+    };
+  },
+
+  async buildLogoutUrl() {
+    // Pas de session Shopify a fermer : effacer le cookie suffit.
+    return null;
+  },
+
+  async getCustomer(accessToken) {
+    if (!accessToken.startsWith(MOCK_TOKEN_PREFIX)) return null;
+    try {
+      const email = Buffer.from(accessToken.slice(MOCK_TOKEN_PREFIX.length), "base64url").toString("utf8");
+      return email.includes("@") ? mockCustomerFor(email) : null;
+    } catch {
+      return null;
+    }
   },
 };
 

@@ -15,6 +15,14 @@ export const shopifyConfig = {
   revalidateSeconds: 3600,
   cartCookie: "aromatarius_cart",
   cartCookieMaxAge: 60 * 60 * 24 * 30,
+  customerAccountClientId: process.env.SHOPIFY_CUSTOMER_ACCOUNT_CLIENT_ID ?? "",
+  /** Origine publique du site, exigee en en-tete par le token endpoint. */
+  siteOrigin: process.env.SITE_URL ?? "http://localhost:3000",
+  customerCookie: "aromatarius_customer",
+  /** Plafond de duree du cookie de session, meme si Shopify annonce plus long. */
+  customerCookieMaxAge: 60 * 60 * 24 * 14,
+  /** Cookies courts du flux OAuth : state, nonce et verifieur PKCE. */
+  oauthCookieMaxAge: 60 * 10,
 } as const;
 
 export function isMockMode(): boolean {

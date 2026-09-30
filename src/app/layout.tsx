@@ -14,6 +14,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { CartDrawer } from "@/components/shop/CartDrawer";
+import { CustomerProvider } from "@/components/account/CustomerProvider";
 import { CartProvider } from "@/components/shop/CartProvider";
 
 const inter = Inter({ subsets: ["latin", "latin-ext"], variable: "--font-inter", display: "swap" });
@@ -60,6 +61,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         >
           {pl.nav.skipToContent}
         </a>
+        <CustomerProvider>
         <CartProvider>
           {/* .site-shell glisse vers la gauche quand le menu mobile est ouvert (effet push de la maquette) */}
           <div className="site-shell flex min-h-dvh flex-col">
@@ -72,6 +74,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           </div>
           <CartDrawer freeShippingThreshold={shop.freeShippingThreshold} />
         </CartProvider>
+        </CustomerProvider>
         <ConsentBanner />
         {gtmId && <GoogleTagManager gtmId={gtmId} />}
       </body>

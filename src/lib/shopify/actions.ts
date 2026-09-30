@@ -1,8 +1,16 @@
 "use server";
 
 import { pl } from "@/i18n/pl";
-import { addToCart, applyDiscountCode, getCart, removeCartLine, removeDiscountCode, updateCartLine } from "./index";
-import type { Cart } from "./types";
+import {
+  addToCart,
+  applyDiscountCode,
+  getCart,
+  getCurrentCustomer,
+  removeCartLine,
+  removeDiscountCode,
+  updateCartLine,
+} from "./index";
+import type { Cart, Customer } from "./types";
 
 /**
  * Server Actions panier, appelées depuis les composants client
@@ -68,4 +76,15 @@ export async function removeDiscountCodeAction(code: string): Promise<CartAction
 
 export async function getCartAction(): Promise<Cart | null> {
   return getCart();
+}
+
+/* ---------- Compte client ---------- */
+
+/**
+ * La connexion et la deconnexion passent par des Route Handlers, pas par des
+ * Server Actions : le flux OAuth est une suite de redirections. Il ne reste
+ * ici que la lecture de session, pour le store client.
+ */
+export async function getCurrentCustomerAction(): Promise<Customer | null> {
+  return getCurrentCustomer();
 }
