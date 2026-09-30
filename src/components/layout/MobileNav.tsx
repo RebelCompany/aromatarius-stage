@@ -1,13 +1,16 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { pl } from "@/i18n/pl";
+import { pl, t } from "@/i18n/pl";
 import { blogLink, knowledgeLinks, needs, needTitle, promoLink, typeCollections } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
+import { useCustomer } from "@/components/account/CustomerProvider";
+import { LogoutButton } from "@/components/account/LogoutButton";
 import { SearchForm } from "./SearchForm";
 
 /**
@@ -17,6 +20,8 @@ import { SearchForm } from "./SearchForm";
  * dépliables, bouton « Do sklepu » en pilule.
  */
 export function MobileNav() {
+  const { customer, loading } = useCustomer();
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
   // Portal : le header a un backdrop-filter qui piégerait un enfant en position fixed
@@ -179,6 +184,30 @@ export function MobileNav() {
 
           <div className="mt-8">
             <SearchForm />
+          </div>
+
+          {/* Compte, tout en bas du menu */}
+          <div className="mt-8 border-t border-sand-200 pt-6">
+            {loading ? null : customer ? (
+              <div className="flex flex-col items-start gap-3">
+                <Link
+                  href="/konto"
+                  onClick={close}
+                  className="text-lg font-medium text-ink-900 transition-colors hover:text-leaf-700"
+                >
+                  {customer.firstName ? t(pl.account.greeting, { name: customer.firstName }) : pl.account.myAccount}
+                </Link>
+                <LogoutButton />
+              </div>
+            ) : (
+              <Link
+                href={`/konto/logowanie?powrot=${encodeURIComponent(pathname)}`}
+                onClick={close}
+                className="inline-flex h-11 items-center rounded-lg border border-sand-200 px-4 text-sm font-medium text-ink-900 transition-colors hover:bg-leaf-100"
+              >
+                {pl.account.login}
+              </Link>
+            )}
           </div>
         </div>
       </aside>

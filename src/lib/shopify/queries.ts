@@ -346,6 +346,20 @@ export const CART_LINES_UPDATE_MUTATION = /* GraphQL */ `
   }
 `;
 
+/* ---------- Rattachement du panier au client ---------- */
+
+export const CART_BUYER_IDENTITY_UPDATE_MUTATION = /* GraphQL */ `
+  ${IMAGE_FRAGMENT}
+  ${MONEY_FRAGMENT}
+  ${CART_FRAGMENT}
+  mutation CartBuyerIdentityUpdate($cartId: ID!, $buyerIdentity: CartBuyerIdentityInput!) {
+    cartBuyerIdentityUpdate(cartId: $cartId, buyerIdentity: $buyerIdentity) {
+      cart { ...CartFields }
+      userErrors { message }
+    }
+  }
+`;
+
 export const CART_DISCOUNT_CODES_UPDATE_MUTATION = /* GraphQL */ `
   ${IMAGE_FRAGMENT}
   ${MONEY_FRAGMENT}

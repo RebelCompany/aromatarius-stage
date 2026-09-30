@@ -201,3 +201,41 @@ export type Metaobject = {
   handle: string;
   fields: Record<string, string | null>;
 };
+
+/* ---------- Compte client ---------- */
+
+export type Customer = {
+  id: string;
+  firstName: string | null;
+  lastName: string | null;
+  email: string;
+};
+
+/**
+ * Codes d'erreur du retour OAuth. Volontairement fermes : Shopify renvoie des
+ * messages anglais et instables, l'UI affiche une traduction depuis i18n/pl.
+ */
+export type AuthErrorCode =
+  | "ACCESS_DENIED"
+  | "STATE_MISMATCH"
+  | "EXCHANGE_FAILED"
+  | "SESSION_EXPIRED"
+  | "UNKNOWN";
+
+export type AuthResult<T> = { ok: true; data: T } | { ok: false; code: AuthErrorCode };
+
+/** Ce que l'adapter conserve d'une session, hors du navigateur. */
+export type CustomerSession = {
+  accessToken: string;
+  idToken: string;
+  refreshToken: string | null;
+  /** ISO 8601 : sert a caler la duree du cookie. */
+  expiresAt: string;
+};
+
+export type AuthorizationRequest = {
+  url: string;
+  state: string;
+  nonce: string;
+  codeVerifier: string;
+};

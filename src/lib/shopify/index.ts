@@ -1,13 +1,17 @@
 import "server-only";
 import { cookies } from "next/headers";
 import { isMockMode, shopifyConfig } from "./config";
+import { safeReturnPath } from "./return-path";
 import type { ShopifyProvider } from "./provider";
 import type {
+  AuthResult,
   Cart,
   Collection,
   CollectionFilters,
   CollectionProductsResult,
+  Customer,
   Metaobject,
+  CustomerSession,
   Product,
   ProductCardData,
   SearchResult,
@@ -17,6 +21,7 @@ import type {
 
 export type * from "./types";
 export { isMockMode } from "./config";
+export { safeReturnPath } from "./return-path";
 
 /**
  * ADAPTER : unique point de contact avec Shopify (règle 1 de CLAUDE.md).
@@ -189,4 +194,138 @@ export async function removeDiscountCode(code?: string): Promise<Cart | null> {
 export async function getCheckoutUrl(): Promise<string | null> {
   const cart = await getCart();
   return cart?.checkoutUrl ?? null;
+}
+
+/* ---------- Compte client : OAuth (cookies httpOnly, jamais localStorage) ---------- */
+
+const OAUTH_COOKIE = {
+  state: "aromatarius_oauth_state",
+  verifier: "aromatarius_oauth_verifier",
+  back: "aromatarius_oauth_back",
+} as const;
+
+type StoredSession = { accessToken: string; idToken: string };
+
+async function readSession(): Promise<StoredSession | null> {
+  const store = await cookies();
+  const raw = store.get(shopifyConfig.customerCookie)?.value;
+  if (!raw) return null;
+  try {
+    return JSON.parse(Buffer.from(raw, "base64url").toString("utf8")) as StoredSession;
+  } catch {
+    return null;
+  }
+}
+
+async function writeSession(session: CustomerSession): Promise<void> {
+  const store = await cookies();
+  // Plus court des deux : l'expiration annoncee par Shopify ou notre plafond.
+  const remaining = Math.floor((new Date(session.expiresAt).getTime() - Date.now()) / 1000);
+  const maxAge = Math.max(0, Math.min(shopifyConfig.customerCookieMaxAge, Number.isFinite(remaining) ? remaining : 0));
+  const payload: StoredSession = { accessToken: session.accessToken, idToken: session.idToken };
+  store.set(shopifyConfig.customerCookie, Buffer.from(JSON.stringify(payload), "utf8").toString("base64url"), {
+    httpOnly: true,
+    sameSite: "lax",
+    secure: process.env.NODE_ENV === "production",
+    path: "/",
+    maxAge,
+  });
+}
+
+async function clearSession(): Promise<void> {
+  const store = await cookies();
+  store.delete(shopifyConfig.customerCookie);
+}
+
+/** Prepare la redirection vers Shopify et memorise de quoi valider le retour. */
+export async function beginLogin(redirectUri: string, returnTo: string | null): Promise<string> {
+  const { url, state, codeVerifier } = await (await provider()).startAuthorization(redirectUri);
+  const store = await cookies();
+  const options = {
+    httpOnly: true,
+    sameSite: "lax" as const,
+    secure: process.env.NODE_ENV === "production",
+    path: "/",
+    maxAge: shopifyConfig.oauthCookieMaxAge,
+  };
+  store.set(OAUTH_COOKIE.state, state, options);
+  store.set(OAUTH_COOKIE.verifier, codeVerifier, options);
+  store.set(OAUTH_COOKIE.back, safeReturnPath(returnTo), options);
+  return url;
+}
+
+/**
+ * Retour de Shopify : valide l'etat, echange le code, ouvre la session et
+ * rattache le panier au compte. Renvoie la page de destination.
+ */
+export async function completeLogin(params: {
+  code: string | null;
+  state: string | null;
+  redirectUri: string;
+}): Promise<AuthResult<{ customer: Customer; returnTo: string }>> {
+  const store = await cookies();
+  const expectedState = store.get(OAUTH_COOKIE.state)?.value ?? null;
+  const codeVerifier = store.get(OAUTH_COOKIE.verifier)?.value ?? null;
+  const returnTo = safeReturnPath(store.get(OAUTH_COOKIE.back)?.value);
+
+  store.delete(OAUTH_COOKIE.state);
+  store.delete(OAUTH_COOKIE.verifier);
+  store.delete(OAUTH_COOKIE.back);
+
+  if (!params.code) return { ok: false, code: "ACCESS_DENIED" };
+  // L'etat lie la redirection a ce navigateur : c'est la protection CSRF du flux.
+  if (!expectedState || !codeVerifier || params.state !== expectedState) return { ok: false, code: "STATE_MISMATCH" };
+
+  const p = await provider();
+  const session = await p.completeAuthorization({ code: params.code, redirectUri: params.redirectUri, codeVerifier });
+  if (!session.ok) return session;
+
+  await writeSession(session.data);
+  const customer = await p.getCustomer(session.data.accessToken);
+  if (!customer) return { ok: false, code: "EXCHANGE_FAILED" };
+
+  await attachCartToCustomer(session.data.accessToken);
+  return { ok: true, data: { customer, returnTo } };
+}
+
+/**
+ * Rattache le panier anonyme au compte. Le panier n'est pas recree : c'est ce
+ * qui evite de perdre les lignes a la connexion, et ce qui pre-remplit le
+ * checkout (docs/03, "buyer identity : email si connecte").
+ */
+async function attachCartToCustomer(accessToken: string | null): Promise<void> {
+  const cartId = await readCartId();
+  if (!cartId) return;
+  try {
+    const cart = await (await provider()).updateCartBuyerIdentity(cartId, accessToken);
+    if (cart.id !== cartId) await writeCartId(cart.id);
+  } catch {
+    // Un panier expire ne doit pas faire echouer la connexion.
+  }
+}
+
+/** Efface la session locale et renvoie l'URL de deconnexion Shopify, si besoin. */
+export async function beginLogout(postLogoutRedirectUri: string): Promise<string | null> {
+  const session = await readSession();
+  await clearSession();
+  await attachCartToCustomer(null);
+  if (!session) return null;
+  try {
+    return await (await provider()).buildLogoutUrl(session.idToken, postLogoutRedirectUri);
+  } catch {
+    return null;
+  }
+}
+
+/** Client connecte, ou null. Le cookie est nettoye si le jeton a expire. */
+export async function getCurrentCustomer(): Promise<Customer | null> {
+  const session = await readSession();
+  if (!session) return null;
+  try {
+    const customer = await (await provider()).getCustomer(session.accessToken);
+    if (!customer) await clearSession();
+    return customer;
+  } catch {
+    return null;
+  }
 }

@@ -13,7 +13,15 @@ import {
 } from "./mappers";
 import type { ShopifyProvider } from "./provider";
 import * as q from "./queries";
-import type { Cart, CollectionFilters, SortKey } from "./types";
+import {
+  buildAuthorizationUrl,
+  buildLogoutUrl as buildShopifyLogoutUrl,
+  codeChallengeFor,
+  exchangeCodeForTokens,
+  fetchCustomer,
+  randomToken,
+} from "./customer-account";
+import type { AuthResult, Cart, CollectionFilters, CustomerSession, SortKey } from "./types";
 
 const sortMap: Record<SortKey, { sortKey: string; reverse: boolean }> = {
   relevance: { sortKey: "BEST_SELLING", reverse: false },
@@ -255,5 +263,47 @@ export const storefrontProvider: ShopifyProvider = {
     // cart.discountCodes avec applicable=false. C'est l'appelant qui tranche.
     assertNoUserErrors(data.cartDiscountCodesUpdate.userErrors, "cartDiscountCodesUpdate");
     return withCheckoutDomain(mapCart(data.cartDiscountCodesUpdate.cart));
+  },
+
+  async updateCartBuyerIdentity(cartId, customerAccessToken) {
+    const data = await storefront<{ cartBuyerIdentityUpdate: { cart: RawCart; userErrors: { message: string }[] } }>(
+      q.CART_BUYER_IDENTITY_UPDATE_MUTATION,
+      { cartId, buyerIdentity: { customerAccessToken, countryCode: "PL" } },
+      { cache: false },
+    );
+    assertNoUserErrors(data.cartBuyerIdentityUpdate.userErrors, "cartBuyerIdentityUpdate");
+    return withCheckoutDomain(mapCart(data.cartBuyerIdentityUpdate.cart));
+  },
+
+  /* ---- Compte client : OAuth Customer Account API ---- */
+
+  async startAuthorization(redirectUri) {
+    const state = randomToken();
+    const nonce = randomToken(16);
+    const codeVerifier = randomToken(48);
+    const url = await buildAuthorizationUrl({
+      redirectUri,
+      state,
+      nonce,
+      codeChallenge: await codeChallengeFor(codeVerifier),
+    });
+    return { url, state, nonce, codeVerifier };
+  },
+
+  async completeAuthorization({ code, redirectUri, codeVerifier }): Promise<AuthResult<CustomerSession>> {
+    try {
+      const tokens = await exchangeCodeForTokens({ code, redirectUri, codeVerifier });
+      return { ok: true, data: tokens };
+    } catch {
+      return { ok: false, code: "EXCHANGE_FAILED" };
+    }
+  },
+
+  async buildLogoutUrl(idToken, postLogoutRedirectUri) {
+    return buildShopifyLogoutUrl(idToken, postLogoutRedirectUri);
+  },
+
+  async getCustomer(accessToken) {
+    return fetchCustomer(accessToken);
   },
 };

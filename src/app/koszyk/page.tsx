@@ -3,7 +3,7 @@ import Link from "next/link";
 import { pl } from "@/i18n/pl";
 import { formatMoney } from "@/lib/format";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { getCart, getShopInfo, isMockMode } from "@/lib/shopify";
+import { getCart, getCurrentCustomer, getShopInfo, isMockMode } from "@/lib/shopify";
 import { FreeShippingBar } from "@/components/shop/FreeShippingBar";
 import { ProductImage } from "@/components/shop/ProductImage";
 import { PromoCode } from "@/components/shop/PromoCode";
@@ -17,7 +17,7 @@ export function generateMetadata(): Metadata {
 
 /** Page panier : fallback sans JS du drawer, handoff vers checkout Shopify. */
 export default async function CartPage({ searchParams }: { searchParams: Promise<{ checkout?: string }> }) {
-  const [cart, shop, sp] = await Promise.all([getCart(), getShopInfo(), searchParams]);
+  const [cart, shop, sp, customer] = await Promise.all([getCart(), getShopInfo(), searchParams, getCurrentCustomer()]);
   const mockCheckout = sp.checkout === "mock" && isMockMode();
 
   return (
@@ -83,6 +83,14 @@ export default async function CartPage({ searchParams }: { searchParams: Promise
           >
             {pl.cart.goToCheckout}
           </a>
+          {!customer && (
+            <p className="mt-4 text-sm text-ink-600">
+              <Link href="/konto/logowanie?powrot=%2Fkoszyk" className="font-medium text-leaf-700 hover:underline">
+                {pl.account.login}
+              </Link>{" "}
+              {pl.cart.loginHint}
+            </p>
+          )}
           <Link href="/olejki-eteryczne" className="mt-4 inline-block text-sm text-leaf-700 hover:underline">
             {pl.cart.continueShopping}
           </Link>
