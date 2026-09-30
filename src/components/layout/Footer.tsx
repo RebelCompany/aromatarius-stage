@@ -35,7 +35,14 @@ export function Footer() {
         </div>
         <FooterColumn title={pl.footer.shop} links={[...typeCollections.map((c) => ({ href: `/${c.handle}`, title: c.title })), promoLink]} />
         <FooterColumn title={pl.footer.knowledge} links={[...knowledgeLinks, blogLink, { href: "/o-nas", title: pl.nav.about }]} />
-        <FooterColumn title={pl.footer.help} links={[{ href: "/kontakt", title: pl.nav.contact }, ...legalLinks]} />
+        <FooterColumn
+          title={pl.footer.help}
+          links={[
+            { href: "/kontakt", title: pl.nav.contact },
+            { href: "/dla-profesjonalistow", title: pl.b2b.pageTitle },
+            ...legalLinks,
+          ]}
+        />
       </div>
 
       <div className="border-t border-sand-200">

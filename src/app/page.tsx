@@ -9,6 +9,7 @@ import { homeNeeds, needTitle } from "@/lib/navigation";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { getCollectionProducts } from "@/lib/shopify";
 import { ContentCard } from "@/components/content/ContentCard";
+import { B2bCallout } from "@/components/b2b/B2bCallout";
 import { TrustBar } from "@/components/layout/TrustBar";
 import { NeedIcon } from "@/components/shop/NeedIcon";
 import { ProductGrid } from "@/components/shop/ProductGrid";
@@ -179,7 +180,12 @@ export default async function HomePage() {
         </section>
       )}
 
-      {/* 8. Bogusia */}
+      {/* 8. Appel B2B */}
+      <section className="container-page pb-12">
+        <B2bCallout />
+      </section>
+
+      {/* 9. Bogusia */}
       <section className="container-page pb-12" aria-labelledby="founder-title">
         <div className="flex flex-col gap-6 rounded-md border border-sand-200 bg-card p-6 md:flex-row md:items-center">
           <div className="flex size-24 shrink-0 items-center justify-center rounded-full bg-leaf-100 font-serif text-3xl text-leaf-900" aria-hidden>

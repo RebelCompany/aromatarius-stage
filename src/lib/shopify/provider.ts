@@ -1,3 +1,5 @@
+import type { PartnershipInput } from "@/lib/b2b";
+import type { LeadResultCode } from "./admin";
 import type {
   AuthResult,
   AuthorizationRequest,
@@ -57,4 +59,10 @@ export interface ShopifyProvider {
   /** URL de deconnexion Shopify, ou null si le flux ne l'exige pas (demo). */
   buildLogoutUrl(idToken: string, postLogoutRedirectUri: string): Promise<string | null>;
   getCustomer(accessToken: string): Promise<Customer | null>;
+
+  /**
+   * Enregistre une demande de partenariat. Le contact est cree avec le tag
+   * "b2b-pending", ce qui permet a la proprietaire de les filtrer dans l'admin.
+   */
+  createPartnerLead(input: PartnershipInput): Promise<LeadResultCode>;
 }

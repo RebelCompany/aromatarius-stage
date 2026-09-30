@@ -271,6 +271,78 @@ export const pl = {
     popularCollections: "Popularne kolekcje",
     generic: "Coś poszło nie tak. Spróbuj ponownie.",
   },
+  b2b: {
+    // Bloc d'appel sur l'accueil
+    calloutTitle: "Współpraca dla profesjonalistów",
+    calloutLead: "Gabinetom, aptekom i twórcom oferujemy:",
+    calloutBullets: [
+      "analizę GC/MS każdej partii, do pobrania",
+      "ceny hurtowe i rosnące rabaty",
+      "elastyczne zamówienia, bez sztywnych progów",
+      "doradztwo aromaterapeutyczne przy doborze",
+    ],
+    calloutQuestion: "Chcesz dołączyć?",
+    calloutText: "Wypełnij formularz, a odezwiemy się w ciągu dwóch dni roboczych.",
+    calloutCta: "Załóż konto pro",
+    learnMore: "Dowiedz się więcej",
+
+    // Page editoriale
+    pageTitle: "Dla profesjonalistów i ambasadorów",
+    pageIntro:
+      "Pracujesz z olejkami na co dzień albo opowiadasz o nich swojej społeczności? Przygotowaliśmy warunki dla trzech grup partnerów.",
+    profilesTitle: "Dla kogo",
+    profile1Title: "Gabinety i specjaliści",
+    profile1Text:
+      "Naturopaci, aromaterapeuci, fizjoterapeuci i spa. Olejki z chemotypem i nazwą łacińską na etykiecie, z analizą partii do wglądu dla klienta.",
+    profile2Title: "Sklepy i apteki",
+    profile2Text:
+      "Sprzedaż stacjonarna i dystrybucja. Ceny hurtowe, materiały na półkę i wsparcie przy pierwszym zatowarowaniu.",
+    profile3Title: "Twórcy i ambasadorzy",
+    profile3Text:
+      "Prowadzisz bloga, kanał albo warsztaty? Program partnerski z prowizją od poleceń i wcześniejszym dostępem do nowości.",
+    benefitsTitle: "Co zyskujesz",
+    benefit1Title: "Rabaty progowe",
+    benefit1Text: "Im większe zamówienie, tym niższa cena jednostkowa. Bez umów na wyłączność.",
+    benefit2Title: "Karty chromatograficzne",
+    benefit2Text: "Pełne wyniki GC/MS każdej partii, gotowe do pokazania klientowi lub pacjentowi.",
+    benefit3Title: "Próbki",
+    benefit3Text: "Zestaw próbek na start, żebyś mógł ocenić zapach i jakość przed decyzją.",
+    benefit4Title: "Opiekun",
+    benefit4Text: "Jedna osoba do kontaktu, która zna Twoją branżę i odpowiada w ciągu dwóch dni roboczych.",
+
+    // Formulaire
+    formTitle: "Formularz współpracy",
+    formIntro:
+      "Opowiedz nam krótko o swojej działalności. Odpowiadamy w ciągu dwóch dni roboczych, w dni powszednie.",
+    fullName: "Imię i nazwisko",
+    company: "Nazwa firmy",
+    nip: "NIP",
+    nipHint: "Dziesięć cyfr. Możesz wpisać z myślnikami lub z przedrostkiem PL.",
+    email: "Adres e-mail",
+    phone: "Numer telefonu",
+    phoneOptional: "nieobowiązkowe",
+    kind: "Rodzaj działalności",
+    kindPlaceholder: "Wybierz",
+    kinds: {
+      apteka: "Apteka lub sklep zielarski",
+      gabinet: "Gabinet terapeutyczny",
+      ambasador: "Ambasador lub twórca internetowy",
+      dystrybutor: "Dystrybutor",
+    },
+    message: "Wiadomość i opis projektu",
+    messageHint: "Czym się zajmujesz i czego potrzebujesz od nas.",
+    submit: "Wyślij zgłoszenie",
+    sending: "Wysyłanie...",
+    successTitle: "Dziękujemy za zgłoszenie",
+    successText:
+      "Twoje dane trafiły do nas. Odezwiemy się na podany adres w ciągu dwóch dni roboczych. Nie musisz nic więcej robić.",
+    failed: "Nie udało się wysłać zgłoszenia. Spróbuj ponownie lub napisz na {email}.",
+    errors: {
+      required: "To pole jest wymagane.",
+      invalid: "Sprawdź, czy wpis jest poprawny.",
+    },
+    consent: "Dane z formularza wykorzystamy wyłącznie do kontaktu w sprawie współpracy.",
+  },
   breadcrumbs: { home: "Strona główna" },
   finder: {
     title: "Dobierz olejek do swoich potrzeb",

@@ -955,6 +955,12 @@ export const mockProvider: ShopifyProvider = {
     return null;
   },
 
+  async createPartnerLead() {
+    // Sans store, rien a taguer : la demande est acceptee pour que le
+    // parcours reste testable de bout en bout.
+    return "CREATED";
+  },
+
   async getCustomer(accessToken) {
     if (!accessToken.startsWith(MOCK_TOKEN_PREFIX)) return null;
     try {

@@ -4,12 +4,14 @@ import { pl } from "@/i18n/pl";
 import {
   addToCart,
   applyDiscountCode,
+  createPartnerLead,
   getCart,
   getCurrentCustomer,
   removeCartLine,
   removeDiscountCode,
   updateCartLine,
 } from "./index";
+import { parsePartnership, type PartnershipErrors } from "@/lib/b2b";
 import type { Cart, Customer } from "./types";
 
 /**
@@ -87,4 +89,34 @@ export async function getCartAction(): Promise<Cart | null> {
  */
 export async function getCurrentCustomerAction(): Promise<Customer | null> {
   return getCurrentCustomer();
+}
+
+/* ---------- Partenariat ---------- */
+
+export type PartnershipResult =
+  | { ok: true }
+  | { ok: false; errors: PartnershipErrors }
+  | { ok: false; failed: true };
+
+/**
+ * Validation cote serveur avant tout appel reseau : les attributs required du
+ * formulaire ne protegent de rien, une Server Action etant appelable seule.
+ */
+export async function submitPartnershipAction(form: FormData): Promise<PartnershipResult> {
+  const raw = Object.fromEntries(
+    ["fullName", "company", "nip", "email", "phone", "kind", "message"].map((k) => [k, String(form.get(k) ?? "")]),
+  );
+
+  const parsed = parsePartnership(raw);
+  if (!parsed.ok) return { ok: false, errors: parsed.errors };
+
+  try {
+    const code = await createPartnerLead(parsed.data);
+    // Un e-mail deja connu veut dire que la demande est arrivee : cote client
+    // c'est un succes, sans quoi la personne renverrait le formulaire en boucle.
+    if (code === "FAILED") return { ok: false, failed: true };
+    return { ok: true };
+  } catch {
+    return { ok: false, failed: true };
+  }
 }

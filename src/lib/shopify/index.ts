@@ -2,6 +2,8 @@ import "server-only";
 import { cookies } from "next/headers";
 import { isMockMode, shopifyConfig } from "./config";
 import { safeReturnPath } from "./return-path";
+import type { LeadResultCode } from "./admin";
+import type { PartnershipInput } from "@/lib/b2b";
 import type { ShopifyProvider } from "./provider";
 import type {
   AuthResult,
@@ -315,6 +317,11 @@ export async function beginLogout(postLogoutRedirectUri: string): Promise<string
   } catch {
     return null;
   }
+}
+
+/** Enregistre une demande de partenariat (tag "b2b-pending"). */
+export async function createPartnerLead(input: PartnershipInput): Promise<LeadResultCode> {
+  return (await provider()).createPartnerLead(input);
 }
 
 /** Client connecte, ou null. Le cookie est nettoye si le jeton a expire. */

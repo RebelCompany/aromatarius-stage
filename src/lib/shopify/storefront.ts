@@ -13,6 +13,7 @@ import {
 } from "./mappers";
 import type { ShopifyProvider } from "./provider";
 import * as q from "./queries";
+import { createPartnerLead } from "./admin";
 import {
   buildAuthorizationUrl,
   buildLogoutUrl as buildShopifyLogoutUrl,
@@ -305,5 +306,9 @@ export const storefrontProvider: ShopifyProvider = {
 
   async getCustomer(accessToken) {
     return fetchCustomer(accessToken);
+  },
+
+  async createPartnerLead(input) {
+    return createPartnerLead(input);
   },
 };
